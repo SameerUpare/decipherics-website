@@ -181,6 +181,69 @@
     }
       .footer-attribution { color:#819084; font-size:11px; letter-spacing:.02em; padding:16px 0; text-align:center; }
   </style>
+<style>
+/* DECiPHERiCS UI refresh — November 2026 */
+:root{
+  --paper:#eef0e2;--paper-2:#f8f9f3;--ink:#064f46;--ink-2:#183e37;
+  --muted:#60746b;--line:rgba(6,79,70,.16);--white:#fffef9;
+  --accent:#b8c994;--dark:#092e2a;--max:1200px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:94px}
+body{background:var(--paper-2);color:var(--ink-2);font-size:15px;line-height:1.7}
+.wrap{width:min(var(--max),calc(100% - 56px))}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(242,244,231,.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.topbar .wrap{max-width:1320px}
+.topbar nav{min-height:76px;gap:32px}
+.wordmark img{width:min(290px,34vw);height:auto}
+.navlinks{gap:clamp(12px,2vw,28px)}
+.navlinks a{font-size:13px;font-weight:550;transition:color .18s ease}
+.navlinks a:hover{color:#008574}
+.nav-cta,.button{border-radius:6px;transition:all .2s ease}
+.nav-cta{padding:11px 18px!important;background:var(--ink);color:#fff!important;border:1px solid var(--ink)}
+.nav-cta:hover{background:#0a6b5e!important;color:#fff!important;transform:translateY(-1px)}
+.hero{min-height:650px;background:linear-gradient(115deg,#eef0e2 0%,#f7f8f0 60%,#e4ead7 100%);position:relative}
+.hero:after{content:"";position:absolute;right:-7vw;top:10%;width:min(42vw,560px);aspect-ratio:1;border:1px solid rgba(6,79,70,.12);border-radius:50%;box-shadow:0 0 0 42px rgba(6,79,70,.025),0 0 0 84px rgba(6,79,70,.02);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:760px;padding:100px 0 92px}
+.eyebrow,.section-label,.card-num{font-size:11px;letter-spacing:.17em;font-weight:700;text-transform:uppercase;color:#6b8776}
+.hero h1{font-size:clamp(54px,8vw,94px);letter-spacing:-.055em;line-height:.98;font-weight:450;margin:28px 0 8px}
+.subbrand{font-size:clamp(18px,2vw,24px);letter-spacing:.015em;color:#547166}
+.hero-copy{max-width:650px;font-size:18px;line-height:1.7;color:#526b61;margin:28px 0}
+.hero-actions{gap:12px;flex-wrap:wrap}
+.button{min-height:48px;padding:12px 19px;font-weight:650}
+.button.primary{box-shadow:0 8px 22px rgba(0,79,69,.12)}
+.button.primary:hover{background:#0b6a5b;transform:translateY(-2px)}
+.button.secondary{background:rgba(255,255,255,.55);border:1px solid var(--line)}
+.hero-note{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#73877b;margin-top:32px}
+section:not(.hero){padding-top:clamp(68px,8vw,108px);padding-bottom:clamp(68px,8vw,108px)}
+h2{letter-spacing:-.045em}
+.statement{max-width:900px}
+.card,.lab-card,.article-card{border-radius:8px;background:rgba(255,255,250,.78);box-shadow:0 4px 16px rgba(21,55,45,.035);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:hover,.lab-card:hover,.article-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(21,55,45,.08);border-color:rgba(6,79,70,.38)}
+.lab-card{min-height:225px;padding:28px}
+.lab-card:first-child{background:#edf2e5;border-color:rgba(6,79,70,.35);box-shadow:inset 0 3px 0 var(--ink),0 8px 24px rgba(21,55,45,.06)}
+.lab-card h3{font-size:21px;letter-spacing:-.02em}
+.related-reading{font-size:12px!important;font-weight:700!important;color:#006e60!important}
+.method{background:#0b302c}
+.step{border:1px solid rgba(220,232,214,.16);border-radius:7px}
+.series-panel{border-radius:9px;background:rgba(255,255,250,.65)}
+.article-card{min-height:285px}
+input,textarea,select{border-radius:5px}
+.button:focus-visible,.navlinks a:focus-visible,.related-reading:focus-visible{outline:3px solid #bd8b3d;outline-offset:3px}
+footer{border-top:1px solid var(--line)}
+@media(max-width:760px){
+ .wrap{width:min(100% - 36px,var(--max))}
+ .topbar nav{min-height:68px;align-items:center}
+ .wordmark img{width:min(230px,52vw)}
+ .navlinks{gap:10px;overflow-x:auto;padding:8px 0 12px}
+ .navlinks a{white-space:nowrap;font-size:12px}
+ .hero{min-height:unset}
+ .hero-inner{padding:82px 0 76px}
+ .hero:after{right:-28vw;top:12%;width:72vw;opacity:.55}
+ .hero-copy{font-size:16px}
+ .series-panel{grid-template-columns:1fr;padding:26px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
 </head>
 <body>
   <header class="topbar">
