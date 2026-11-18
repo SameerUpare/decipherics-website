@@ -4,8 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#e9ecd8">
-  <meta name="description" content="DECiPHERiCS is an independent Financial Crime Intelligence Lab exploring the engineering behind AML, sanctions screening, transaction intelligence and explainable AI.">
+  <meta name="description" content="DECiPHERiCS is an independent Financial Crime Intelligence Lab exploring AML, sanctions screening, transaction intelligence and explainable AI through research and practical experiments.">
+  <meta name="author" content="DECiPHERiCS">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://decipherics.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DECiPHERiCS">
+  <meta property="og:title" content="DECiPHERiCS | Financial Crime Intelligence Lab">
+  <meta property="og:description" content="Understanding, building and testing the intelligence behind financial-crime detection.">
+  <meta property="og:url" content="https://decipherics.com/">
+  <meta property="og:image" content="https://decipherics.com/decipherics_logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DECiPHERiCS | Financial Crime Intelligence Lab">
+  <meta name="twitter:description" content="Research · Build · Test · Learn">
+  <meta name="twitter:image" content="https://decipherics.com/decipherics_logo.png">
   <title>DECiPHERiCS | Financial Crime Intelligence Lab</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DECiPHERiCS",
+    "url": "https://decipherics.com/",
+    "email": "decipherics@gmail.com",
+    "description": "An independent Financial Crime Intelligence Lab focused on AML, sanctions screening, transaction intelligence and explainable AI."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DECiPHERiCS",
+    "url": "https://decipherics.com/"
+  }
+  </script>
   <style>
     :root {
       --paper: #e9ecd8;
@@ -244,13 +275,64 @@ footer{border-top:1px solid var(--line)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
-</head>
+
+<style>
+  /* Homepage improvements: accessible mobile navigation, research detail and transparency */
+  .menu-toggle {
+    display:none; width:44px; height:42px; border:1px solid var(--line); border-radius:5px;
+    background:transparent; color:var(--ink); cursor:pointer; align-items:center;
+    justify-content:center; flex-direction:column; gap:5px;
+  }
+  .menu-toggle span { display:block; width:19px; height:2px; background:currentColor; transition:transform .18s, opacity .18s; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity:0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .research-detail { color:#65766a; font-size:12px; line-height:1.6; margin:13px 0 0; }
+  .research-status { display:inline-block; margin-top:16px; color:#78877b; font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+  .article-tags { display:flex; flex-wrap:wrap; gap:6px; margin:-3px 0 16px; }
+  .article-tags span { border:1px solid rgba(6,79,70,.16); border-radius:20px; padding:3px 8px; color:#60776a; font-size:10px; }
+  .forthcoming-card { background:#f4f5ed; border-style:dashed; }
+  .forthcoming-card .article-meta { color:#8a7954; }
+  .transparency { background:#f8f9f1; }
+  .transparency-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .transparency-grid article { border-top:1px solid var(--line); padding:20px 12px 0 0; }
+  .transparency-grid article > span { color:#78917b; font-size:11px; letter-spacing:.12em; }
+  .transparency-grid h3 { color:var(--ink); font-size:18px; margin:13px 0 8px; }
+  .transparency-grid p,.transparency-footnote { color:#68796e; font-size:13px; }
+  .transparency-footnote { margin-top:28px; padding:17px 20px; border-left:2px solid #8ca58c; background:rgba(233,236,216,.45); }
+  .article-card .article-link { display:inline-block; }
+  @media(max-width:800px) {
+    .menu-toggle { display:flex; flex:0 0 auto; }
+    .topbar nav { position:relative; }
+    .navlinks {
+      display:none; position:absolute; top:calc(100% - 1px); left:0; right:0; z-index:60;
+      padding:12px; background:#f2f4e7; border:1px solid var(--line); border-top:0;
+      box-shadow:0 12px 24px rgba(20,55,45,.10); flex-direction:column; align-items:stretch; gap:0;
+      overflow:visible;
+    }
+    .navlinks.is-open { display:flex; }
+    .navlinks a, .navlinks a:not(.nav-cta) { display:block; padding:12px 10px; font-size:14px; }
+    .navlinks .nav-cta { margin-top:8px; text-align:center; }
+    .transparency-grid { grid-template-columns:repeat(2,1fr); }
+  }
+  @media(max-width:520px) {
+    .transparency-grid { grid-template-columns:1fr; }
+    .menu-toggle { width:40px; height:40px; }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    .menu-toggle span { transition:none; }
+  }
+</style>
+\n</head>
 <body>
   <header class="topbar">
     <div class="wrap">
       <nav aria-label="Main navigation">
         <a class="wordmark" href="#home" aria-label="DECiPHERiCS — Financial Crime Intelligence Lab home"><img src="decipherics_logo.png" alt="DECiPHERiCS — Financial Crime Intelligence Lab"></a>
-        <div class="navlinks">
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="navlinks" id="primary-navigation">
           <a href="#mission">Mission</a>
           <a href="#about">About</a>
           <a href="#capabilities">Research areas</a>
@@ -266,13 +348,13 @@ footer{border-top:1px solid var(--line)}
     <section class="hero" id="home">
       <div class="wrap">
         <div class="hero-inner">
-          <div class="eyebrow">Independent research · Applied engineering · Financial crime technology</div>
+          <div class="eyebrow">Independent research · Applied engineering</div>
           <h1>DECiPHERiCS</h1>
           <div class="subbrand">Financial Crime Intelligence Lab</div>
-          <p class="hero-copy">Deciphering the signals, relationships and behaviours behind financial crime. An independent lab exploring how data engineering, analytical methods and AI can support more explainable financial-crime detection.</p>
+          <p class="hero-copy">Understanding, building and testing the intelligence behind financial-crime detection. Explore how data engineering, analytical methods and AI can support more explainable screening and investigation.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#capabilities">Explore research areas <span>↗</span></a>
-            <a class="button secondary" href="#approach">How we work</a>
+            <a class="button primary" href="/labs/screening-parse-lab.html" data-track="screening-lab">Explore Screening Lab <span>↗</span></a>
+            <a class="button secondary" href="#decoded">Explore Research</a>
           </div>
           <div class="hero-note">Research · Build · Test · Learn</div>
         </div>
@@ -327,15 +409,15 @@ footer{border-top:1px solid var(--line)}
           <p class="lead">A connected set of research areas, moving from the quality of source data to the interpretation of risk and the evidence behind a decision.</p>
         </div>
         <div class="cards">
-          <article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions & Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a></article>
-          <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span></article>
-          <article class="card"><div class="card-num">03 — MODEL INTELLIGENCE</div><h3>Machine Learning & Evaluation</h3><p>Feature engineering, model comparison, ranking, calibration, performance measurement and model limitations.</p><span class="tag">Applied ML research</span></article>
-          <article class="card"><div class="card-num">04 — PAYMENT INTELLIGENCE</div><h3>Payment & Transaction Screening</h3><p>ISO 20022 message structures, party extraction, payment context, screening workflows and decision controls.</p><span class="tag">Payment systems</span><a class="related-reading" href="#article-002">Related reading: AML Decoded #002 ↗</a></article>
-          <article class="card"><div class="card-num">05 — BEHAVIOURAL INTELLIGENCE</div><h3>Transaction Monitoring</h3><p>Typologies, synthetic transaction scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="tag">Behaviour & patterns</span></article>
-          <article class="card"><div class="card-num">06 — NETWORK INTELLIGENCE</div><h3>Graph Analytics</h3><p>Entity relationships, ownership links, connected accounts, transaction paths and network-based risk signals.</p><span class="tag">Relationships & networks</span></article>
-          <article class="card"><div class="card-num">07 — INVESTIGATION</div><h3>Explainability & Case Intelligence</h3><p>Evidence traceability, alert context, investigation workflows and human-centred decision support.</p><span class="tag">Decision support</span></article>
-          <article class="card"><div class="card-num">08 — EMERGING METHODS</div><h3>AI & Financial Crime</h3><p>Explore responsible applications of generative AI, assisted analysis and automation with clear human oversight.</p><span class="tag">Emerging research</span></article>
-          <article class="card"><div class="card-num">09 — DATA FOUNDATION</div><h3>Data Engineering & Governance</h3><p>Source quality, ingestion pipelines, provenance, versioning, reproducibility and controlled experimentation.</p><span class="tag">Trustworthy data</span><a class="related-reading" href="#article-003">Related reading: AML Decoded #003 ↗</a><a class="related-reading" href="#article-005">Related reading: AML Decoded #005 ↗</a></article>
+          <article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions & Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><p class="research-detail">In focus: sanctions data ingestion, name normalisation, candidate retrieval, fuzzy matching and explainable entity resolution.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Explore the Screening Intelligence Lab ↗</a><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a></article>
+          <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a></article>
+          <article class="card"><div class="card-num">03 — MODEL INTELLIGENCE</div><h3>Machine Learning & Evaluation</h3><p>Feature engineering, model comparison, ranking, calibration, performance measurement and model limitations.</p><span class="tag">Applied ML research</span><p class="research-detail">In focus: feature design, ranking, calibration, validation strategy, threshold selection and model limitations.</p><span class="research-status">Research notes in development</span></article>
+          <article class="card"><div class="card-num">04 — PAYMENT INTELLIGENCE</div><h3>Payment & Transaction Screening</h3><p>ISO 20022 message structures, party extraction, payment context, screening workflows and decision controls.</p><span class="tag">Payment systems</span><p class="research-detail">In focus: ISO 20022 structures, party extraction, message context, screening stages and decision traceability.</p><a class="related-reading" href="#article-002">Related reading: AML Decoded #002 ↗</a></article>
+          <article class="card"><div class="card-num">05 — BEHAVIOURAL INTELLIGENCE</div><h3>Transaction Monitoring</h3><p>Typologies, synthetic transaction scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="tag">Behaviour & patterns</span><p class="research-detail">In focus: typologies, synthetic scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="research-status">Research notes in development</span></article>
+          <article class="card"><div class="card-num">06 — NETWORK INTELLIGENCE</div><h3>Graph Analytics</h3><p>Entity relationships, ownership links, connected accounts, transaction paths and network-based risk signals.</p><span class="tag">Relationships & networks</span><p class="research-detail">In focus: ownership links, connected entities, transaction paths, network features and graph-based risk signals.</p><span class="research-status">Research notes in development</span></article>
+          <article class="card"><div class="card-num">07 — INVESTIGATION</div><h3>Explainability & Case Intelligence</h3><p>Evidence traceability, alert context, investigation workflows and human-centred decision support.</p><span class="tag">Decision support</span><p class="research-detail">In focus: evidence traceability, alert context, investigation workflows and human review.</p><span class="research-status">Research notes in development</span></article>
+          <article class="card"><div class="card-num">08 — EMERGING METHODS</div><h3>AI & Financial Crime</h3><p>Explore responsible applications of generative AI, assisted analysis and automation with clear human oversight.</p><span class="tag">Emerging research</span><p class="research-detail">In focus: assisted analysis, responsible automation, human oversight and evaluation of generative AI outputs.</p><span class="research-status">Research notes in development</span></article>
+          <article class="card"><div class="card-num">09 — DATA FOUNDATION</div><h3>Data Engineering & Governance</h3><p>Source quality, ingestion pipelines, provenance, versioning, reproducibility and controlled experimentation.</p><span class="tag">Trustworthy data</span><p class="research-detail">In focus: source quality, ingestion pipelines, provenance, watchlist versioning and reproducible experiments.</p><a class="related-reading" href="#article-003">Related reading: AML Decoded #003 ↗</a><a class="related-reading" href="#article-005">Related reading: AML Decoded #005 ↗</a></article>
         </div>
       </div>
     </section>
@@ -396,36 +478,54 @@ footer{border-top:1px solid var(--line)}
             <option value="name-screening">Name screening</option>
             <option value="payment-screening">Payment screening</option>
             <option value="knowledge-base">Knowledge base & data governance</option>
+            <option value="data-engineering">Data engineering</option>
           </select>
         </div>
-        <p class="archive-count" id="archiveCount" aria-live="polite">Showing 4 of 4 articles</p>
+        <p class="archive-count" id="archiveCount" aria-live="polite">Showing 5 of 5 articles</p>
         <div class="article-grid" id="articleGrid" aria-label="AML Decoded article summaries">
           <article class="article-card" id="article-001" data-category="name-screening" data-search="001 sanctions name screening comparing two strings transliteration aliases entity resolution">
             <div class="article-meta">AML DECODED #001 · NAME SCREENING</div>
             <h3>Why Is Sanctions Name Screening Harder Than Comparing Two Strings?</h3>
-            <div class="article-date"><time datetime="2026-11-05">Published 05 Nov 2026</time></div>
+            <div class="article-date"><time datetime="2026-11-05">Published 05 Nov 2026</time> · 6 min read</div>
+            <div class="article-tags"><span>Sanctions</span><span>NLP</span><span>Entity Resolution</span></div>
             <p>Names can vary through transliteration, diacritics, aliases, abbreviations and inconsistent data. This article explains why string similarity is not identity similarity, and why candidate retrieval, contextual attributes and governed decisions all matter.</p>
-            <a class="article-link" href="https://lnkd.in/p/d2J8Ut3V" target="_blank" rel="noopener noreferrer">Read the complete article on LinkedIn ↗</a>
+            <a class="article-link" href="https://lnkd.in/p/d2J8Ut3V" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-001">Read the complete article on LinkedIn ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
           </article>
           <article class="article-card" id="article-002" data-category="payment-screening" data-search="002 payment message screening decision iso 20022 payment intelligence">
             <div class="article-meta">AML DECODED #002 · PAYMENT SCREENING</div>
             <h3>From Payment Message to Screening Decision</h3>
-            <div class="article-date"><time datetime="2026-11-10">Published 10 Nov 2026</time></div>
+            <div class="article-date"><time datetime="2026-11-10">Published 10 Nov 2026</time> · 5 min read</div>
+            <div class="article-tags"><span>ISO 20022</span><span>Payment Screening</span></div>
             <p>Explore the journey from an incoming payment message to a screening outcome, and the stages that connect payment data, party information, screening logic and a reviewable decision.</p>
             <a class="article-link" href="https://lnkd.in/p/dkepNrAG" target="_blank" rel="noopener noreferrer">Read the complete article on LinkedIn ↗</a>
           </article>
           <article class="article-card" id="article-003" data-category="knowledge-base" data-search="003 sanctions knowledge base entities aliases watchlist data engineering">
             <div class="article-meta">AML DECODED #003 · KNOWLEDGE BASE</div>
             <h3>What Is a Sanctions Knowledge Base?</h3>
-            <div class="article-date"><time datetime="2026-11-11">Published 11 Nov 2026</time></div>
+            <div class="article-date"><time datetime="2026-11-11">Published 11 Nov 2026</time> · 5 min read</div>
+            <div class="article-tags"><span>Sanctions</span><span>Data Engineering</span></div>
             <p>An introduction to the structured information that supports sanctions screening: entities, names, aliases and the data foundation used to identify and assess potential matches.</p>
-            <a class="article-link" href="https://lnkd.in/p/dyY3C_7u" target="_blank" rel="noopener noreferrer">Read the complete article on LinkedIn ↗</a>
+            <a class="article-link" href="https://lnkd.in/p/dyY3C_7u" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-003">Read the complete article on LinkedIn ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+          </article>
+          <article class="article-card forthcoming-card" id="article-004" data-category="data-engineering" data-search="004 building sanctions data pipeline ingestion validation transformation provenance data engineering forthcoming">
+            <div class="article-meta">AML DECODED #004 · DATA ENGINEERING</div>
+            <h3>Building a Sanctions Data Pipeline</h3>
+            <div class="article-date">Publication status: Forthcoming</div>
+            <p>A planned article on the stages involved in building a sanctions data pipeline, from source ingestion and data validation to transformation and preparation for downstream screening.</p>
+            <div class="article-tags"><span>Data Engineering</span><span>Sanctions</span><span>Data Quality</span></div>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <span class="article-link pending-link">Full article will be linked here when published</span>
           </article>
           <article class="article-card" id="article-005" data-category="knowledge-base" data-search="005 watchlist data version control sanctions data governance versioning change history reproducibility">
-            <div class="article-meta">AML DECODED #005 · WATCHLIST DATA & GOVERNANCE · PUBLISHED 12 NOV 2026</div>
+            <div class="article-meta">AML DECODED #005 · WATCHLIST DATA & GOVERNANCE</div>
             <h3>Why Watchlist Data Needs Version Control</h3>
+            <div class="article-date"><time datetime="2026-11-12">Published 12 Nov 2026</time> · 5 min read</div>
+            <div class="article-tags"><span>Sanctions</span><span>Data Governance</span></div>
             <p>Why changes to watchlist data need to be tracked and controlled, with version history supporting traceability and reproducibility in sanctions screening.</p>
-            <a class="article-link" href="https://lnkd.in/p/dG4sfU3s" target="_blank" rel="noopener noreferrer">Read the complete article on LinkedIn ↗</a>
+            <a class="article-link" href="https://lnkd.in/p/dG4sfU3s" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-005">Read the complete article on LinkedIn ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
           </article>
         </div>
         <div class="empty-state" id="emptyState">No articles match that search. Try another keyword or category.</div>
@@ -485,6 +585,52 @@ footer{border-top:1px solid var(--line)}
 
     searchInput.addEventListener('input', filterArticles);
     categoryFilter.addEventListener('change', filterArticles);
+
+    // Accessible compact navigation for tablet and mobile.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const primaryNavigation = document.getElementById('primary-navigation');
+
+    function closeNavigation() {
+      if (!menuToggle || !primaryNavigation) return;
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      primaryNavigation.classList.remove('is-open');
+    }
+
+    if (menuToggle && primaryNavigation) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+        primaryNavigation.classList.toggle('is-open', !isOpen);
+      });
+
+      primaryNavigation.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeNavigation);
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          closeNavigation();
+          menuToggle.focus();
+        }
+      });
+
+      document.addEventListener('click', event => {
+        if (!primaryNavigation.contains(event.target) && !menuToggle.contains(event.target)) {
+          closeNavigation();
+        }
+      });
+    }
+
+    // Optional analytics hook: events are emitted only if an analytics dataLayer is installed.
+    document.querySelectorAll('[data-track]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({ event: 'decipherics_outbound_click', item: link.dataset.track });
+        }
+      });
+    });
   </script>
 </body>
 </html>
