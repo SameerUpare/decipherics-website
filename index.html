@@ -301,6 +301,14 @@ footer{border-top:1px solid var(--line)}
   .transparency-grid p,.transparency-footnote { color:#68796e; font-size:13px; }
   .transparency-footnote { margin-top:28px; padding:17px 20px; border-left:2px solid #8ca58c; background:rgba(233,236,216,.45); }
   .article-card .article-link { display:inline-block; }
+  .latest-lab { background:#f8f9f1; padding-top:58px!important; padding-bottom:58px!important; }
+  .latest-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:14px; }
+  .latest-item { border:1px solid var(--line); border-radius:8px; padding:25px; background:rgba(255,255,250,.82); }
+  .latest-item h3 { color:var(--ink); font-size:20px; line-height:1.25; margin:12px 0 9px; }
+  .latest-item p { color:#68796e; font-size:13px; margin:0 0 16px; }
+  .latest-item .article-link { color:#087464; font-size:12px; font-weight:700; }
+  .latest-label { color:#78917b; font-size:10px; font-weight:750; letter-spacing:.13em; text-transform:uppercase; }
+  @media(max-width:650px) { .latest-grid { grid-template-columns:1fr; } }
   @media(max-width:800px) {
     .menu-toggle { display:flex; flex:0 0 auto; }
     .topbar nav { position:relative; }
@@ -361,6 +369,29 @@ footer{border-top:1px solid var(--line)}
       </div>
     </section>
 
+    <section class="latest-lab" id="latest">
+      <div class="wrap">
+        <div class="section-head" style="margin-bottom:26px;">
+          <div class="kicker">Latest / Lab updates</div>
+          <h2>What’s new in the lab.</h2>
+          <p class="lead">New research publications and practical workbenches from DECiPHERiCS.</p>
+        </div>
+        <div class="latest-grid">
+          <article class="latest-item">
+            <div class="latest-label">Latest research publication · AML Decoded #006</div>
+            <h3>The NLP Behind Name Normalisation</h3>
+            <p>A research note on the natural language processing concepts behind name normalisation in financial-crime screening.</p>
+            <a class="article-link" href="https://lnkd.in/p/dapaG8ci" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-006">Read AML Decoded #006 on LinkedIn ↗</a>
+          </article>
+          <article class="latest-item">
+            <div class="latest-label">Interactive workbench · Available now</div>
+            <h3>Screening Intelligence Lab</h3>
+            <p>Explore the Screening Parse Lab to inspect how name inputs are parsed and prepared for downstream screening experiments.</p>
+            <a class="article-link" href="/labs/screening-parse-lab.html" data-track="screening-lab-latest">Open Screening Parse Lab ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section class="mission" id="mission">
       <div class="wrap">
@@ -410,7 +441,7 @@ footer{border-top:1px solid var(--line)}
         </div>
         <div class="cards">
           <article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions & Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><p class="research-detail">In focus: sanctions data ingestion, name normalisation, candidate retrieval, fuzzy matching and explainable entity resolution.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Explore the Screening Intelligence Lab ↗</a><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a></article>
-          <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a></article>
+          <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="#article-006">Related reading: AML Decoded #006 — The NLP Behind Name Normalisation ↗</a><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a></article>
           <article class="card"><div class="card-num">03 — MODEL INTELLIGENCE</div><h3>Machine Learning & Evaluation</h3><p>Feature engineering, model comparison, ranking, calibration, performance measurement and model limitations.</p><span class="tag">Applied ML research</span><p class="research-detail">In focus: feature design, ranking, calibration, validation strategy, threshold selection and model limitations.</p><span class="research-status">Research notes in development</span></article>
           <article class="card"><div class="card-num">04 — PAYMENT INTELLIGENCE</div><h3>Payment & Transaction Screening</h3><p>ISO 20022 message structures, party extraction, payment context, screening workflows and decision controls.</p><span class="tag">Payment systems</span><p class="research-detail">In focus: ISO 20022 structures, party extraction, message context, screening stages and decision traceability.</p><a class="related-reading" href="#article-002">Related reading: AML Decoded #002 ↗</a></article>
           <article class="card"><div class="card-num">05 — BEHAVIOURAL INTELLIGENCE</div><h3>Transaction Monitoring</h3><p>Typologies, synthetic transaction scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="tag">Behaviour & patterns</span><p class="research-detail">In focus: typologies, synthetic scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="research-status">Research notes in development</span></article>
@@ -479,9 +510,10 @@ footer{border-top:1px solid var(--line)}
             <option value="payment-screening">Payment screening</option>
             <option value="knowledge-base">Knowledge base & data governance</option>
             <option value="data-engineering">Data engineering</option>
+            <option value="nlp-normalisation">NLP & name normalisation</option>
           </select>
         </div>
-        <p class="archive-count" id="archiveCount" aria-live="polite">Showing 5 of 5 articles</p>
+        <p class="archive-count" id="archiveCount" aria-live="polite">Showing 6 of 6 entries</p>
         <div class="article-grid" id="articleGrid" aria-label="AML Decoded article summaries">
           <article class="article-card" id="article-001" data-category="name-screening" data-search="001 sanctions name screening comparing two strings transliteration aliases entity resolution">
             <div class="article-meta">AML DECODED #001 · NAME SCREENING</div>
@@ -527,9 +559,18 @@ footer{border-top:1px solid var(--line)}
             <a class="article-link" href="https://lnkd.in/p/dG4sfU3s" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-005">Read the complete article on LinkedIn ↗</a>
             <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
           </article>
+          <article class="article-card" id="article-006" data-category="nlp-normalisation" data-search="006 nlp natural language processing name normalisation name normalization text processing screening">
+            <div class="article-meta">AML DECODED #006 · NLP & NAME NORMALISATION</div>
+            <h3>The NLP Behind Name Normalisation</h3>
+            <div class="article-date">LinkedIn publication</div>
+            <div class="article-tags"><span>NLP</span><span>Name Normalisation</span><span>Name Screening</span></div>
+            <p>A look at the natural language processing concepts behind name normalisation and its role in preparing name data for screening and matching.</p>
+            <a class="article-link" href="https://lnkd.in/p/dapaG8ci" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-006">Read the complete article on LinkedIn ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+          </article>
         </div>
         <div class="empty-state" id="emptyState">No articles match that search. Try another keyword or category.</div>
-        <p class="article-note">Dates reflect the article publication dates recorded for this series. These are summaries, not full reproductions; each complete article opens on LinkedIn.</p>
+        <p class="article-note">Publication dates are shown where recorded. These are summaries, not full reproductions; each complete article opens on LinkedIn.</p>
         <p class="disclaimer">DECiPHERiCS is an independent research and experimentation initiative. Demonstrations and synthetic datasets are educational and do not constitute production AML controls, regulatory advice or validated detection performance.</p>
       </div>
     </section>
@@ -579,7 +620,7 @@ footer{border-top:1px solid var(--line)}
         if (show) visible++;
       });
 
-      archiveCount.textContent = `Showing ${visible} of ${articleCards.length} articles`;
+      archiveCount.textContent = `Showing ${visible} of ${articleCards.length} entries`;
       emptyState.style.display = visible ? 'none' : 'block';
     }
 
