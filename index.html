@@ -331,7 +331,25 @@ footer{border-top:1px solid var(--line)}
     .menu-toggle span { transition:none; }
   }
 </style>
-\n</head>
+\n
+<style>
+  /* Feedback invitation: clear, low-friction route for early reviewers */
+  .feedback { background:#eef1e4; }
+  .feedback-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .feedback-grid article { border:1px solid var(--line); border-radius:8px; padding:23px; background:rgba(255,255,250,.7); }
+  .feedback-grid article > span { color:#78917b; font-size:10px; letter-spacing:.13em; font-weight:700; }
+  .feedback-grid h3 { color:var(--ink); font-size:19px; margin:15px 0 7px; }
+  .feedback-grid p { color:#68796e; font-size:13px; margin:0; }
+  .feedback-action { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:20px; padding:24px; border:1px solid var(--line); border-radius:8px; background:rgba(255,255,250,.55); }
+  .feedback-action strong { color:var(--ink); }
+  .feedback-action p { color:#68796e; font-size:13px; margin:5px 0 0; }
+  @media(max-width:700px) {
+    .feedback-grid { grid-template-columns:1fr; }
+    .feedback-action { align-items:stretch; flex-direction:column; }
+  }
+</style>
+
+</head>
 <body>
   <header class="topbar">
     <div class="wrap">
@@ -346,6 +364,7 @@ footer{border-top:1px solid var(--line)}
           <a href="#capabilities">Research areas</a>
           <a href="#approach">Approach</a>
           <a href="#decoded">AML Decoded</a>
+          <a href="#feedback">Feedback</a>
           <a class="nav-cta" href="#explore-lab">Explore Lab</a>
         </div>
       </nav>
@@ -359,10 +378,11 @@ footer{border-top:1px solid var(--line)}
           <div class="eyebrow">Independent research · Applied engineering</div>
           <h1>DECiPHERiCS</h1>
           <div class="subbrand">Financial Crime Intelligence Lab</div>
-          <p class="hero-copy">Understanding, building and testing the intelligence behind financial-crime detection. Explore how data engineering, analytical methods and AI can support more explainable screening and investigation.</p>
+          <p class="hero-copy">An independent learning, research and experimentation initiative exploring the technology behind financial-crime detection. Read practical explainers, test ideas in interactive labs and help challenge the methods, assumptions and results.</p>
           <div class="hero-actions">
             <a class="button primary" href="/labs/screening-parse-lab.html" data-track="screening-lab">Explore Screening Lab <span>↗</span></a>
             <a class="button secondary" href="#decoded">Explore Research</a>
+            <a class="button secondary" href="#feedback">Share feedback</a>
           </div>
           <div class="hero-note">Research · Build · Test · Learn</div>
         </div>
@@ -410,7 +430,7 @@ footer{border-top:1px solid var(--line)}
           <article class="mission-pillar"><b>03</b><h3>Research</h3><p>Investigate emerging techniques across AI, NLP, machine learning and graph analytics.</p></article>
           <article class="mission-pillar"><b>04</b><h3>Contribute</h3><p>Share ideas, challenge findings, suggest experiments and help expand the collective knowledge base.</p></article>
         </div>
-        <div class="contribute-note"><strong>An invitation to fellow practitioners:</strong> Suggest a research question, challenge an experiment, share a use case or propose a topic for exploration. DECiPHERiCS aims to grow through practical knowledge-sharing and thoughtful contribution.</div>
+        <div class="contribute-note"><strong>Built to be challenged:</strong> Suggest a research question, question an assumption, share a use case or point out where an experiment falls short. Critical feedback is part of the research process.</div>
       </div>
     </section>
 
@@ -541,14 +561,13 @@ footer{border-top:1px solid var(--line)}
             <a class="article-link" href="https://lnkd.in/p/dyY3C_7u" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-003">Read the complete article on LinkedIn ↗</a>
             <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
           </article>
-          <article class="article-card forthcoming-card" id="article-004" data-category="data-engineering" data-search="004 building sanctions data pipeline ingestion validation transformation provenance data engineering forthcoming">
+          <article class="article-card" id="article-004" data-category="data-engineering" data-search="004 building sanctions data pipeline ingestion validation transformation provenance data engineering">
             <div class="article-meta">AML DECODED #004 · DATA ENGINEERING</div>
             <h3>Building a Sanctions Data Pipeline</h3>
-            <div class="article-date">Publication status: Forthcoming</div>
-            <p>A planned article on the stages involved in building a sanctions data pipeline, from source ingestion and data validation to transformation and preparation for downstream screening.</p>
+            <p>Explore the stages involved in building a sanctions data pipeline, from source ingestion and data validation to transformation and preparation for downstream screening.</p>
             <div class="article-tags"><span>Data Engineering</span><span>Sanctions</span><span>Data Quality</span></div>
+            <a class="article-link" href="https://lnkd.in/p/diNzSBWd" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-004">Read AML Decoded #004 on LinkedIn ↗</a>
             <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
-            <span class="article-link pending-link">Full article will be linked here when published</span>
           </article>
           <article class="article-card" id="article-005" data-category="knowledge-base" data-search="005 watchlist data version control sanctions data governance versioning change history reproducibility">
             <div class="article-meta">AML DECODED #005 · WATCHLIST DATA & GOVERNANCE</div>
@@ -574,11 +593,31 @@ footer{border-top:1px solid var(--line)}
         <p class="disclaimer">DECiPHERiCS is an independent research and experimentation initiative. Demonstrations and synthetic datasets are educational and do not constitute production AML controls, regulatory advice or validated detection performance.</p>
       </div>
     </section>
-<section class="contact" id="contact">
+
+    <section class="feedback" id="feedback">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">07 / Feedback & collaboration</div>
+          <h2>Help challenge the work.</h2>
+          <p class="lead">DECiPHERiCS is at an early stage. The aim is to build a useful research and experimentation space, not simply publish content. Honest feedback from practitioners, technologists, researchers and learners will help shape what comes next.</p>
+        </div>
+        <div class="feedback-grid">
+          <article><span>01 / THE IDEA</span><h3>Is the purpose clear?</h3><p>Does the site explain what DECiPHERiCS is trying to do and who it is for?</p></article>
+          <article><span>02 / THE EXPERIENCE</span><h3>What should improve?</h3><p>Are the website, articles and interactive lab easy to understand and use?</p></article>
+          <article><span>03 / WHAT’S NEXT</span><h3>What is worth exploring?</h3><p>Which AML, sanctions, payments, data or AI topics deserve a practical experiment?</p></article>
+        </div>
+        <div class="feedback-action">
+          <div><strong>Critical feedback is more useful than compliments.</strong><p>Share what works, what does not, what is missing and what you would build differently.</p></div>
+          <a class="button primary" href="mailto:decipherics@gmail.com?subject=DECiPHERiCS%20%E2%80%94%20Website%20feedback&body=Hello%20DECiPHERiCS%2C%5Cn%5CnI%20had%20a%20look%20at%20the%20website%20and%20wanted%20to%20share%20some%20feedback.%5Cn%5CnWhat%20is%20clear%20or%20useful%3F%5CnWhat%20is%20confusing%20or%20missing%3F%5CnWhich%20research%20area%20or%20experiment%20would%20you%20like%20to%20see%20next%3F%5CnAny%20other%20suggestions%3A%5Cn%5CnRegards%2C">Send feedback ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
       <div class="wrap">
         <div class="contact-box">
           <div>
-            <div class="kicker">07 / Connect</div>
+            <div class="kicker">08 / Connect</div>
             <h2>Explore the questions shaping financial-crime technology.</h2>
           </div>
           <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
