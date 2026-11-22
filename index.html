@@ -430,10 +430,10 @@ footer{border-top:1px solid var(--line)}
         </div>
         <div class="latest-grid">
           <article class="latest-item" id="latestResearchCard">
-            <div class="latest-label" id="latestResearchLabel">Latest research publication · AML Decoded #007</div>
-            <h3 id="latestResearchTitle">Candidate Retrieval: Finding the Right Watchlist Records</h3>
-            <p id="latestResearchDescription">How a screening system narrows a large watchlist into a relevant candidate set, balancing retrieval coverage, efficiency and downstream matching quality.</p>
-            <a class="article-link" id="latestResearchLink" href="https://www.linkedin.com/feed/update/urn:li:activity:7529506400721575936/" target="_blank" rel="noopener noreferrer">Read AML Decoded #007 on LinkedIn ↗</a>
+            <div class="latest-label" id="latestResearchLabel">Latest research publication · AML Decoded #008</div>
+            <h3 id="latestResearchTitle">Why One Normalised Name Is Not Enough</h3>
+            <p id="latestResearchDescription">Why name screening needs multiple representations of an identity — original, normalised, tokenised, transliterated and alias-aware — to improve candidate retrieval and downstream matching.</p>
+            <a class="article-link" id="latestResearchLink" href="#latest" aria-label="AML Decoded #008 article link">Read AML Decoded #008 on LinkedIn ↗</a>
           </article>
           <article class="latest-item">
             <div class="latest-label">Interactive workbench · Available now</div>
@@ -492,7 +492,7 @@ footer{border-top:1px solid var(--line)}
           <p class="lead">A connected set of research areas, moving from the quality of source data to the interpretation of risk and the evidence behind a decision.</p>
         </div>
         <div class="cards">
-          <article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions & Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><p class="research-detail">In focus: sanctions data ingestion, name normalisation, candidate retrieval, fuzzy matching and explainable entity resolution.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Explore the Screening Intelligence Lab ↗</a><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a><a class="related-reading" href="https://www.linkedin.com/feed/update/urn:li:activity:7529506400721575936/" target="_blank" rel="noopener noreferrer">Related reading: AML Decoded #007 — Candidate Retrieval ↗</a></article>
+          <article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions & Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><p class="research-detail">In focus: sanctions data ingestion, name normalisation, candidate retrieval, fuzzy matching and explainable entity resolution.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Explore the Screening Intelligence Lab ↗</a><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a><a class="related-reading" href="#latest">Related reading: AML Decoded #008 — Why One Normalised Name Is Not Enough ↗</a></article>
           <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="#article-006">Related reading: AML Decoded #006 — The NLP Behind Name Normalisation ↗</a><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a></article>
           <article class="card"><div class="card-num">03 — MODEL INTELLIGENCE</div><h3>Machine Learning & Evaluation</h3><p>Feature engineering, model comparison, ranking, calibration, performance measurement and model limitations.</p><span class="tag">Applied ML research</span><p class="research-detail">In focus: feature design, ranking, calibration, validation strategy, threshold selection and model limitations.</p><span class="research-status">Research notes in development</span></article>
           <article class="card"><div class="card-num">04 — PAYMENT INTELLIGENCE</div><h3>Payment & Transaction Screening</h3><p>ISO 20022 message structures, party extraction, payment context, screening workflows and decision controls.</p><span class="tag">Payment systems</span><p class="research-detail">In focus: ISO 20022 structures, party extraction, message context, screening stages and decision traceability.</p><a class="related-reading" href="#article-002">Related reading: AML Decoded #002 ↗</a></article>
@@ -1040,5 +1040,93 @@ footer{border-top:1px solid var(--line)}
   }
 })();
 </script>
+
+<!-- Google Analytics 4: replace the placeholder with your GA4 Measurement ID (G-XXXXXXXXXX). -->
+<script>
+(function () {
+  const GA4_MEASUREMENT_ID = 'G-REPLACE_WITH_YOUR_MEASUREMENT_ID';
+
+  // Prevent accidental requests to Google Analytics until a real Measurement ID is supplied.
+  if (!/^G-[A-Z0-9]+$/.test(GA4_MEASUREMENT_ID) ||
+      GA4_MEASUREMENT_ID === 'G-REPLACE_WITH_YOUR_MEASUREMENT_ID') {
+    console.info('DECiPHERiCS: GA4 is not active. Add the GA4 Measurement ID to enable analytics.');
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA4_MEASUREMENT_ID);
+
+  const analyticsScript = document.createElement('script');
+  analyticsScript.async = true;
+  analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=' +
+    encodeURIComponent(GA4_MEASUREMENT_ID);
+  document.head.appendChild(analyticsScript);
+
+  // Track outbound links, including LinkedIn article links.
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    let destination;
+    try { destination = new URL(link.href, window.location.href); }
+    catch (_) { return; }
+
+    if (destination.origin !== window.location.origin) {
+      gtag('event', 'outbound_click', {
+        link_url: destination.href,
+        link_domain: destination.hostname,
+        link_text: (link.innerText || link.getAttribute('aria-label') || '').trim().slice(0, 100)
+      });
+    }
+
+    const articleCard = link.closest('.article-card');
+    if (articleCard) {
+      gtag('event', 'article_click', {
+        article_number: articleCard.dataset.articleNumber || '',
+        article_title: (articleCard.querySelector('h3')?.innerText || '').trim().slice(0, 150),
+        link_url: destination.href
+      });
+    }
+  });
+
+  // Track archive search and category filtering without sending the search text.
+  const articleSearch = document.getElementById('articleSearch');
+  if (articleSearch) {
+    let searchTimer;
+    articleSearch.addEventListener('input', function () {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(function () {
+        if (articleSearch.value.trim()) {
+          gtag('event', 'article_search', {
+            search_length: articleSearch.value.trim().length
+          });
+        }
+      }, 800);
+    });
+  }
+
+  const articleCategory = document.getElementById('articleCategory');
+  if (articleCategory) {
+    articleCategory.addEventListener('change', function () {
+      gtag('event', 'article_category_filter', {
+        category: articleCategory.value
+      });
+    });
+  }
+
+  const feedbackForm = document.getElementById('deciphericsFeedbackForm');
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function () {
+      gtag('event', 'feedback_submit', {
+        feedback_category: document.getElementById('feedbackCategory')?.value || ''
+      });
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
