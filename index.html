@@ -733,7 +733,9 @@ footer{border-top:1px solid var(--line)}
 
   // Configure this with the deployed Google Apps Script Web App URL ending in /exec.
   // The same endpoint serves the public article feed and accepts feedback submissions.
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx90S16denXBo0PQAFehZGO_HSU5vV6gPCrmbRvoUwYgzKJEA793kfW3HEK09ePhNJA/exec';
+  // New on --- https://script.google.com/macros/s/AKfycbxmZ-PSC38iGIZGFh2E_RlbQFnqzqZeg4UOYwlZxmxe4WS2bqrujIliZYoBI10dF4Y/exec 
+  //--old one - https://script.google.com/macros/s/AKfycbx90S16denXBo0PQAFehZGO_HSU5vV6gPCrmbRvoUwYgzKJEA793kfW3HEK09ePhNJA/exec
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmZ-PSC38iGIZGFh2E_RlbQFnqzqZeg4UOYwlZxmxe4WS2bqrujIliZYoBI10dF4Y/exec';
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
