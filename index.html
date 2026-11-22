@@ -381,6 +381,47 @@ footer{border-top:1px solid var(--line)}
     .feedback-submit-row { align-items:flex-start; flex-direction:column; }
   }
 </style>
+
+<style>
+/* Hybrid Intelligence Lab visual refresh — preserves existing content and integrations */
+:root{--lab-night:#082f2d;--lab-night-2:#10443e;--lab-mint:#b9d9c8;--lab-gold:#dfb36b;--lab-paper:#f5f5eb}
+.hero{min-height:unset;background:radial-gradient(ellipse at 78% 42%,rgba(181,205,171,.28),transparent 35%),linear-gradient(115deg,#eef0e2 0%,#f8f8f1 54%,#e6ecdc 100%);padding:70px 0 76px}
+.hero:after{right:-220px;top:-130px;width:650px;height:650px;opacity:.55}
+.hero-layout{width:min(var(--max),calc(100% - 56px));margin:0 auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(390px,.98fr);gap:clamp(35px,6vw,82px);align-items:center;position:relative;z-index:1}
+.hero-inner{max-width:unset;padding:34px 0 38px}
+.hero h1{font-size:clamp(48px,6.5vw,82px);letter-spacing:-.065em;margin:22px 0 10px}
+.eyebrow{display:flex;align-items:center;gap:9px}
+.eyebrow-dot{width:7px;height:7px;background:#b78b4b;border-radius:50%;box-shadow:0 0 0 4px rgba(183,139,75,.13)}
+.hero-copy{font-size:17px;max-width:590px;margin:24px 0 28px}
+.hero-note{gap:13px;margin-top:32px;letter-spacing:.12em}
+.hero-note i{width:4px;height:4px;background:#b18b53;border-radius:50%;display:inline-block}
+.hero-visual{position:relative;min-height:390px;padding:18px 20px 16px;background:linear-gradient(145deg,#0b3935,#082a29);border:1px solid rgba(8,47,45,.18);border-radius:12px;box-shadow:0 28px 65px rgba(16,57,48,.19);color:#e1eee5;overflow:hidden}
+.hero-visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(185,217,200,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(185,217,200,.045) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom,black,transparent 92%);pointer-events:none}
+.visual-topline,.visual-footer{position:relative;z-index:1;display:flex;justify-content:space-between;gap:12px;align-items:center;font:10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:#a7c6b7}
+.live-indicator{border:1px solid rgba(223,179,107,.5);border-radius:20px;padding:5px 8px;color:#e4c58f;font-size:9px}
+.network-stage{height:300px;position:relative;z-index:1}
+.network-lines{width:100%;height:100%;overflow:visible}
+.visual-signal{position:absolute;background:rgba(9,54,49,.92);border:1px solid rgba(185,217,200,.24);border-radius:6px;padding:9px 12px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.visual-signal span{display:block;font:9px ui-monospace,monospace;letter-spacing:.12em;color:#9bbcad}
+.visual-signal strong{display:block;font:600 17px ui-monospace,monospace;color:#f0d19a;margin-top:3px}
+.signal-one{left:2%;top:13%}.signal-two{right:1%;bottom:10%}
+.visual-footer{border-top:1px solid rgba(185,217,200,.18);padding-top:13px;font-size:9px}
+.visual-footer b{display:inline-block;width:6px;height:6px;border-radius:50%;background:#d9b36e;margin-right:7px}
+.latest-lab{background:#f0f2e8!important}
+.latest-item:first-child{background:linear-gradient(135deg,#fffef8,#edf2e7);border-color:rgba(6,79,70,.25);box-shadow:inset 3px 0 #b9c99b,0 8px 24px rgba(21,55,45,.045)}
+.latest-item:nth-child(2){background:#0b302c;border-color:#0b302c;color:#e8efe4}
+.latest-item:nth-child(2) h3{color:#f1f4e9}.latest-item:nth-child(2) p{color:#bfd0c2}.latest-item:nth-child(2) .latest-label{color:#b8d1c0}.latest-item:nth-child(2) .article-link{color:#e7c58d}
+.mission-pillars{gap:16px}.mission-pillar{padding:20px 16px 0 0}
+.capabilities{background:#fbfcf7}.card{background:#f5f6ee}.card:nth-child(3n+2){background:#eef2e8}
+.explore-lab{background:#edf1e7}.lab-card:first-child{background:linear-gradient(145deg,#0b3935,#0a2e2b);color:#e5eee5;border-color:#0b3935}.lab-card:first-child h3{color:#f3f5e9}.lab-card:first-child p{color:#c1d2c5}.lab-card:first-child .card-num{color:#d7bd8c}.lab-card:first-child .related-reading{color:#e7c58d!important}
+.series{background:#f4f5ec}.series-panel{box-shadow:0 10px 30px rgba(21,55,45,.045)}
+.article-card{border-radius:9px}.article-card:first-child{border-top:3px solid #b7c795}
+.feedback{background:#e9eee2}.feedback-action{background:#fbfcf7;box-shadow:0 10px 28px rgba(21,55,45,.04)}
+.contact{background:#f1f3e9}.contact-box{border-bottom-color:rgba(6,79,70,.24)}
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr;gap:24px}.hero-inner{padding:25px 0 10px}.hero-visual{min-height:350px}.network-stage{height:265px}}
+@media(max-width:600px){.hero{padding:40px 0 48px}.hero-layout{width:min(100% - 32px,var(--max))}.hero-inner{padding:20px 0 8px}.hero h1{font-size:clamp(43px,13vw,65px)}.hero-copy{font-size:15px}.hero-visual{min-height:300px;padding:14px}.network-stage{height:230px}.visual-footer{font-size:8px}.hero-actions .button{width:100%}.hero-note{font-size:9px;gap:9px}}
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -406,17 +447,38 @@ footer{border-top:1px solid var(--line)}
   <main>
     <section class="hero" id="home">
       <div class="wrap">
-        <div class="hero-inner">
-          <div class="eyebrow">Independent research · Applied engineering</div>
-          <h1>DECiPHERiCS</h1>
-          <div class="subbrand">Financial Crime Intelligence Lab</div>
-          <p class="hero-copy">An independent learning, research and experimentation initiative exploring the technology behind financial-crime detection. Read practical explainers, test ideas in interactive labs and help challenge the methods, assumptions and results.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="/labs/screening-parse-lab.html" data-track="screening-lab">Explore Screening Lab <span>↗</span></a>
-            <a class="button secondary" href="#decoded">Explore Research</a>
-            <a class="button secondary" href="#feedback">Share feedback</a>
+        <div class="hero-layout">
+          <div class="hero-inner">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> Independent research · Applied engineering</div>
+            <h1>DECiPHERiCS</h1>
+            <div class="subbrand">Financial Crime Intelligence Lab</div>
+            <p class="hero-copy">Decode the technology behind financial-crime detection. Explore practical research, test algorithms in interactive labs and examine the evidence behind intelligent decisions.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="/labs/screening-parse-lab.html" data-track="screening-lab">Explore Screening Intelligence Lab <span>↗</span></a>
+              <a class="button secondary" href="#decoded">Explore Research</a>
+              <a class="button secondary" href="#feedback">Share feedback</a>
+            </div>
+            <div class="hero-note">Investigate <i></i> Experiment <i></i> Understand</div>
           </div>
-          <div class="hero-note">Research · Build · Test · Learn</div>
+          <aside class="hero-visual" aria-label="Illustrative financial intelligence network visualisation">
+            <div class="visual-topline"><span>INTELLIGENCE / NETWORK VIEW</span><span class="live-indicator">CONCEPT</span></div>
+            <div class="network-stage">
+              <svg class="network-lines" viewBox="0 0 520 350" role="img" aria-label="Connected entities and relationship paths">
+                <g fill="none" stroke="#7fc4ad" stroke-width="1.4" opacity=".55">
+                  <path d="M72 174 L178 91 L282 151 L410 74 M178 91 L220 270 L282 151 L430 244 M72 174 L220 270 L105 300 M282 151 L365 320 L430 244 M410 74 L430 244"/>
+                  <path d="M178 91 L365 320 M72 174 L430 244" stroke-dasharray="4 7" opacity=".55"/>
+                </g>
+                <g fill="#0c5149" stroke="#a5d8c4" stroke-width="2">
+                  <circle cx="72" cy="174" r="9"/><circle cx="178" cy="91" r="13"/><circle cx="282" cy="151" r="17"/><circle cx="410" cy="74" r="10"/><circle cx="430" cy="244" r="13"/><circle cx="220" cy="270" r="10"/><circle cx="105" cy="300" r="6"/><circle cx="365" cy="320" r="7"/>
+                </g>
+                <circle cx="282" cy="151" r="29" fill="none" stroke="#e0b66e" stroke-width="1.5" opacity=".8"/>
+                <g fill="#d9e9df" font-family="monospace" font-size="10"><text x="48" y="153">ENTITY A</text><text x="155" y="64">ALIAS</text><text x="254" y="119">MATCH</text><text x="384" y="49">ENTITY C</text><text x="404" y="270">ACCOUNT</text><text x="190" y="294">LINK</text></g>
+              </svg>
+              <div class="visual-signal signal-one"><span>SIMILARITY</span><strong>0.92</strong></div>
+              <div class="visual-signal signal-two"><span>RELATIONSHIPS</span><strong>08 LINKS</strong></div>
+            </div>
+            <div class="visual-footer"><span><b></b> ENTITY RESOLUTION</span><span>DATA · CONTEXT · EVIDENCE</span></div>
+          </aside>
         </div>
       </div>
     </section>
@@ -438,8 +500,8 @@ footer{border-top:1px solid var(--line)}
           <article class="latest-item">
             <div class="latest-label">Interactive workbench · Available now</div>
             <h3>Screening Intelligence Lab</h3>
-            <p>Explore the Screening Parse Lab to inspect how name inputs are parsed and prepared for downstream screening experiments.</p>
-            <a class="article-link" href="/labs/screening-parse-lab.html" data-track="screening-lab-latest">Open Screening Parse Lab ↗</a>
+            <p>Explore the Screening Intelligence Lab — From Payment Message to Screening Decision. Follow how ISO 20022 payment data is parsed, names are extracted and prepared for screening experiments.</p>
+            <a class="article-link" href="/labs/screening-parse-lab.html" data-track="screening-lab-latest">Open Screening Intelligence Lab ↗</a>
           </article>
         </div>
       </div>
@@ -493,7 +555,7 @@ footer{border-top:1px solid var(--line)}
         </div>
         <div class="cards">
           <article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions & Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><p class="research-detail">In focus: sanctions data ingestion, name normalisation, candidate retrieval, fuzzy matching and explainable entity resolution.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Explore the Screening Intelligence Lab ↗</a><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a><a class="related-reading" href="#latest">Related reading: AML Decoded #008 — Why One Normalised Name Is Not Enough ↗</a></article>
-          <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="#article-006">Related reading: AML Decoded #006 — The NLP Behind Name Normalisation ↗</a><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a></article>
+          <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="#article-006">Related reading: AML Decoded #006 — The NLP Behind Name Normalisation ↗</a><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a></article>
           <article class="card"><div class="card-num">03 — MODEL INTELLIGENCE</div><h3>Machine Learning & Evaluation</h3><p>Feature engineering, model comparison, ranking, calibration, performance measurement and model limitations.</p><span class="tag">Applied ML research</span><p class="research-detail">In focus: feature design, ranking, calibration, validation strategy, threshold selection and model limitations.</p><span class="research-status">Research notes in development</span></article>
           <article class="card"><div class="card-num">04 — PAYMENT INTELLIGENCE</div><h3>Payment & Transaction Screening</h3><p>ISO 20022 message structures, party extraction, payment context, screening workflows and decision controls.</p><span class="tag">Payment systems</span><p class="research-detail">In focus: ISO 20022 structures, party extraction, message context, screening stages and decision traceability.</p><a class="related-reading" href="#article-002">Related reading: AML Decoded #002 ↗</a></article>
           <article class="card"><div class="card-num">05 — BEHAVIOURAL INTELLIGENCE</div><h3>Transaction Monitoring</h3><p>Typologies, synthetic transaction scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="tag">Behaviour & patterns</span><p class="research-detail">In focus: typologies, synthetic scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="research-status">Research notes in development</span></article>
@@ -527,10 +589,10 @@ footer{border-top:1px solid var(--line)}
         <div class="section-head">
           <div class="kicker">05 / Explore Lab</div>
           <h2>From research to working experiments.</h2>
-          <p class="lead">Explore practical workbenches that turn financial-crime research into testable experiments. The Screening Parse Lab is available now; additional workbenches will be added as they are developed.</p>
+          <p class="lead">Explore practical workbenches that turn financial-crime research into testable experiments. The Screening Intelligence Lab is available now; additional workbenches will be added as they are developed.</p>
         </div>
         <div class="cards">
-          <article class="lab-card"><div class="card-num">WORKBENCH 01 · AVAILABLE NOW</div><h3>Screening Intelligence Lab</h3><p>Explore name normalisation, candidate retrieval, similarity methods, contextual features and explainable screening outcomes through the interactive Screening Parse Lab.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Open Screening Parse Lab ↗</a></article>
+          <article class="lab-card"><div class="card-num">WORKBENCH 01 · AVAILABLE NOW</div><h3>Screening Intelligence Lab</h3><p>From Payment Message to Screening Decision. Explore ISO 20022 payment parsing, name extraction, normalisation, candidate retrieval, similarity methods and explainable screening outcomes.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Open Screening Intelligence Lab ↗</a></article>
           <article class="lab-card"><div class="card-num">WORKBENCH 02 · IN DEVELOPMENT</div><h3>Payment Intelligence Lab</h3><p>Inspect payment-message structures, party extraction, screening stages and decision traceability across payment flows.</p><span class="tag">Planned workbench</span></article>
           <article class="lab-card"><div class="card-num">WORKBENCH 03 · IN DEVELOPMENT</div><h3>Graph & Behaviour Lab</h3><p>Experiment with entity relationships, transaction networks, behavioural patterns and investigation signals.</p><span class="tag">Planned workbench</span></article>
         </div>
@@ -577,7 +639,7 @@ footer{border-top:1px solid var(--line)}
             <div class="article-tags"><span>NLP</span><span>Name Normalisation</span><span>Entity Resolution</span></div>
             <p>Why name screening needs multiple representations of an identity — original, normalised, tokenised, transliterated and alias-aware — to improve candidate retrieval and downstream matching.</p>
             <a class="article-link" href="https://lnkd.in/p/dgFJneHd" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-008">Read AML Decoded #008 on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
           </article>
           <article class="article-card" id="article-007" data-article-number="#007" data-category="name-screening" data-search="007 candidate retrieval right watchlist records sanctions name screening entity resolution NLP">
             <div class="article-meta">AML DECODED #007 · CANDIDATE RETRIEVAL</div>
@@ -586,7 +648,7 @@ footer{border-top:1px solid var(--line)}
             <div class="article-tags"><span>Sanctions</span><span>Candidate Retrieval</span><span>NLP</span></div>
             <p>How a screening system narrows a large watchlist into a relevant candidate set, balancing retrieval coverage, efficiency and downstream matching quality.</p>
             <a class="article-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7529506400721575936/" target="_blank" rel="noopener noreferrer">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
           </article>
           
           <article class="article-card" id="article-001" data-category="name-screening" data-search="001 sanctions name screening comparing two strings transliteration aliases entity resolution">
@@ -596,7 +658,7 @@ footer{border-top:1px solid var(--line)}
             <div class="article-tags"><span>Sanctions</span><span>NLP</span><span>Entity Resolution</span></div>
             <p>Names can vary through transliteration, diacritics, aliases, abbreviations and inconsistent data. This article explains why string similarity is not identity similarity, and why candidate retrieval, contextual attributes and governed decisions all matter.</p>
             <a class="article-link" href="https://lnkd.in/p/d2J8Ut3V" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-001">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
           </article>
           <article class="article-card" id="article-002" data-category="payment-screening" data-search="002 payment message screening decision iso 20022 payment intelligence">
             <div class="article-meta">AML DECODED #002 · PAYMENT SCREENING</div>
@@ -613,7 +675,7 @@ footer{border-top:1px solid var(--line)}
             <div class="article-tags"><span>Sanctions</span><span>Data Engineering</span></div>
             <p>An introduction to the structured information that supports sanctions screening: entities, names, aliases and the data foundation used to identify and assess potential matches.</p>
             <a class="article-link" href="https://lnkd.in/p/dyY3C_7u" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-003">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
           </article>
           <article class="article-card" id="article-004" data-category="data-engineering" data-search="004 building sanctions data pipeline ingestion validation transformation provenance data engineering">
             <div class="article-meta">AML DECODED #004 · DATA ENGINEERING</div>
@@ -621,7 +683,7 @@ footer{border-top:1px solid var(--line)}
             <p>Explore the stages involved in building a sanctions data pipeline, from source ingestion and data validation to transformation and preparation for downstream screening.</p>
             <div class="article-tags"><span>Data Engineering</span><span>Sanctions</span><span>Data Quality</span></div>
             <a class="article-link" href="https://lnkd.in/p/diNzSBWd" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-004">Read AML Decoded #004 on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
           </article>
           <article class="article-card" id="article-005" data-category="knowledge-base" data-search="005 watchlist data version control sanctions data governance versioning change history reproducibility">
             <div class="article-meta">AML DECODED #005 · WATCHLIST DATA & GOVERNANCE</div>
@@ -630,7 +692,7 @@ footer{border-top:1px solid var(--line)}
             <div class="article-tags"><span>Sanctions</span><span>Data Governance</span></div>
             <p>Why changes to watchlist data need to be tracked and controlled, with version history supporting traceability and reproducibility in sanctions screening.</p>
             <a class="article-link" href="https://lnkd.in/p/dG4sfU3s" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-005">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
           </article>
           <article class="article-card" id="article-006" data-category="nlp-normalisation" data-search="006 nlp natural language processing name normalisation name normalization text processing screening">
             <div class="article-meta">AML DECODED #006 · NLP & NAME NORMALISATION</div>
@@ -639,7 +701,7 @@ footer{border-top:1px solid var(--line)}
             <div class="article-tags"><span>NLP</span><span>Name Normalisation</span><span>Name Screening</span></div>
             <p>A look at the natural language processing concepts behind name normalisation and its role in preparing name data for screening and matching.</p>
             <a class="article-link" href="https://lnkd.in/p/dapaG8ci" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-006">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Parse Lab ↗</a>
+            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
           </article>
         </div>
         <div class="empty-state" id="emptyState">No articles match that search. Try another keyword or category.</div>
@@ -674,7 +736,7 @@ footer{border-top:1px solid var(--line)}
                   <option>Website clarity and purpose</option>
                   <option>Website experience and usability</option>
                   <option>Articles and research content</option>
-                  <option>Screening Parse Lab</option>
+                  <option>Screening Intelligence Lab</option>
                   <option>New topic or experiment idea</option>
                   <option>Technical correction</option>
                   <option>Other</option>
