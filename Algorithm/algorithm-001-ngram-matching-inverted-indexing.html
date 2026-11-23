@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="A technical guide to character N-grams, inverted indexes and candidate retrieval for financial crime name screening." name="description"/>
+<title>Understanding N-gram Matching &amp; Inverted Indexing | DECiPHERiCS</title>
+<style>
+:root{
+  --bg:#0b1020;--panel:#111a2e;--panel2:#16223a;--text:#e8eef8;--muted:#9aa9bf;
+  --line:#273650;--accent:#75a7ff;--accent2:#67dec0;--amber:#f2c879;--code:#080e1b;
+  --max:1160px;--radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:var(--max);margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.13em;font-size:15px}.brand span{color:var(--accent)}
+.nav small{color:var(--muted);font-size:12px;letter-spacing:.12em}
+.wrap{max-width:var(--max);margin:auto;padding:0 24px}
+.hero{padding:78px 0 52px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 80% 5%,rgba(71,123,213,.19),transparent 42%)}
+.eyebrow{color:var(--accent2);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(38px,6vw,66px);line-height:1.06;letter-spacing:-.045em;max-width:900px;margin:18px 0}
+.subtitle{font-size:20px;color:#b8c7dc;max-width:780px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{border:1px solid var(--line);border-radius:99px;padding:5px 11px;color:#c3d2e8;font-size:12px}
+.hero-note{margin-top:30px;padding:17px 20px;border-left:3px solid var(--accent2);background:rgba(103,222,192,.07);max-width:850px;color:#c8d7e9}
+.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:52px;padding-top:44px}
+aside{position:sticky;top:90px;align-self:start;max-height:calc(100vh - 110px);overflow:auto;padding:4px 0 20px}
+aside strong{display:block;color:var(--muted);font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+aside a{display:block;color:#aebdd2;font-size:13px;padding:7px 10px;border-left:1px solid var(--line)}
+aside a:hover,aside a.active{color:var(--text);border-left:2px solid var(--accent);background:rgba(117,167,255,.07);text-decoration:none}
+article{min-width:0;padding-bottom:90px}
+section{margin:0 0 58px}
+h2{font-size:30px;line-height:1.2;letter-spacing:-.025em;margin:0 0 18px}
+h3{font-size:20px;margin:28px 0 10px}
+h4{font-size:15px;margin:20px 0 8px;color:#dce7f6}
+p{color:#c1cede;margin:12px 0}
+.lead{font-size:18px;color:#d6e1ef}
+.callout,.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin:20px 0}
+.callout{border-left:3px solid var(--accent)}
+.callout.green{border-left-color:var(--accent2)}
+.callout.amber{border-left-color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+.mini{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px}
+.mini b{display:block;color:#edf4ff;margin-bottom:4px}
+.mini p{font-size:14px;margin:0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:#dce8f8;background:#131e33;font-weight:700}
+td{color:#bdcadd}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+code{color:#b9d2ff;background:#17243b;padding:2px 5px;border-radius:5px;font-size:.92em}
+pre{white-space:pre;overflow:auto;background:var(--code);border:1px solid var(--line);border-radius:12px;padding:18px;color:#d6e4f8;font-size:13px;line-height:1.65}
+.formula{background:#101a2d;border:1px solid #30415e;border-radius:12px;padding:16px 18px;margin:14px 0;color:#e8f1ff;font-family:Georgia,serif;font-size:19px;overflow-x:auto}
+.formula small{display:block;font:12px/1.5 ui-sans-serif,system-ui;color:var(--muted);margin-top:7px}
+.sequence{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.token{padding:7px 10px;border:1px solid #38527a;background:#172945;color:#dceaff;border-radius:8px;font:700 13px ui-monospace,monospace}
+.token.hit{border-color:#2d997e;background:#10332f;color:#a8f0dc}
+.step{display:grid;grid-template-columns:34px 1fr;gap:13px;margin:17px 0}
+.num{width:30px;height:30px;border-radius:9px;background:#1b3152;color:#a9caff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.step p{margin:3px 0}
+.caption{font-size:12px;color:var(--muted)}
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;background:#1a3152;color:#b9d3ff;font-size:11px;font-weight:800;letter-spacing:.04em}
+.footer{border-top:1px solid var(--line);padding:28px 0 45px;color:var(--muted);font-size:13px}
+.kicker{font-size:12px;color:var(--accent2);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.copy{float:right;border:1px solid var(--line);background:#14213a;color:#cfe0f6;padding:5px 9px;border-radius:7px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:20px}aside{position:relative;top:auto;max-height:none;display:flex;overflow:auto;gap:5px;padding:0 0 12px}aside strong{display:none}aside a{white-space:nowrap;border:1px solid var(--line);border-radius:8px}.grid{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:0 17px}.nav{padding:12px 17px}.hero{padding:54px 0 36px}h2{font-size:26px}.subtitle{font-size:17px}table{font-size:12px}th,td{padding:9px 7px}}
+
+.practice-link{display:inline-flex;align-items:center;gap:6px;margin:8px 0 2px;padding:7px 11px;
+  border:1px solid rgba(117,167,255,.35);border-radius:8px;background:rgba(117,167,255,.07);
+  color:#a9caff;font-size:13px;font-weight:700}
+.practice-link:hover{border-color:var(--accent);background:rgba(117,167,255,.13);text-decoration:none}
+.practice-section{margin:30px 0 38px;padding:28px;border:1px solid rgba(103,222,192,.28);
+  border-radius:16px;background:linear-gradient(135deg,rgba(103,222,192,.09),rgba(117,167,255,.07))}
+.practice-section .kicker{color:var(--accent2)}
+.practice-section h2{margin:10px 0 12px}
+.practice-section p{max-width:760px}
+.practice-layout{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.practice-action{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
+  padding:13px 17px;border-radius:9px;background:var(--accent2);color:#071a20;font-weight:800;font-size:13px}
+.practice-action:hover{background:#8cebd2;text-decoration:none}
+.practice-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+.practice-meta span{border:1px solid var(--line);border-radius:99px;padding:5px 10px;color:#c3d2e8;font-size:11px}
+@media(max-width:650px){.practice-layout{grid-template-columns:1fr}.practice-action{width:100%}}
+
+
+/* DECiPHERiCS shared visual system — sage, pine and warm-white */
+:root {
+  --paper:#e9ecd8; --paper-2:#f4f5eb; --ink:#004f45; --ink-2:#173f35;
+  --muted:#65766a; --line:rgba(0,79,69,.18); --white:#fbfcf6;
+  --accent:#006e60; --accent2:#78917b; --amber:#b18b53;
+  --dark:#092e2a; --panel:#fbfcf6; --panel2:#eef2e8;
+}
+
+body { background:var(--paper-2); color:var(--ink-2); }
+header { background:rgba(233,236,216,.94); border-bottom-color:var(--line); }
+.brand, .brand span { color:var(--ink); }
+.nav small { color:var(--muted); }
+a { color:#006e60; }
+.hero { background:linear-gradient(115deg,#eef0e2 0%,#f8f8f1 54%,#e6ecdc 100%); border-bottom-color:var(--line); }
+.eyebrow,.kicker { color:#78917b; }
+h1,h2,h3,h4 { color:var(--ink); }
+.subtitle,.lead { color:#526b61; }
+p,td { color:#526b61; }
+.pill { color:#526b61; border-color:var(--line); background:rgba(255,255,250,.55); }
+.hero-note { color:#315b4d; background:#edf2e5; border-left-color:#78917b; }
+aside strong { color:var(--muted); }
+aside a { color:#526b61; border-left-color:var(--line); }
+aside a:hover, aside a.active { color:var(--ink); border-left-color:#006e60; background:rgba(0,79,69,.06); }
+.callout,.card,.mini { background:#fbfcf6; border-color:var(--line); color:var(--ink-2); }
+.callout { border-left-color:#006e60; }
+.callout.green { border-left-color:#78917b; }
+.callout.amber { border-left-color:#b18b53; }
+.mini b { color:var(--ink); }
+h4 { color:var(--ink); }
+th { color:var(--ink); background:#eef2e8; }
+td { color:#526b61; }
+code { color:#005b50; background:#e9eee2; }
+pre,.formula { background:#092e2a; border-color:#315b4d; color:#e8efe4; }
+.formula small { color:#bfd0c2; }
+.token { border-color:rgba(0,79,69,.25); background:#eef2e8; color:var(--ink); }
+.token.hit { border-color:#78917b; background:#e3eee3; color:#005b50; }
+.num { background:#e2ebdf; color:#005b50; }
+.badge { background:#e3eee3; color:#005b50; }
+.footer { border-top-color:var(--line); color:var(--muted); }
+.copy { border-color:var(--line); background:#eef2e8; color:var(--ink); }
+.copy:hover { border-color:#006e60; }
+.practice-link { border-color:rgba(0,79,69,.24); background:#edf2e5; color:#006e60; }
+.practice-link:hover { border-color:#006e60; background:#e3eee3; }
+.practice-section { border-color:rgba(0,79,69,.2); background:linear-gradient(135deg,#f8f9f1,#edf2e5); }
+.practice-section .kicker { color:#78917b; }
+.practice-action { background:#004f45; color:#fbfcf6; }
+.practice-action:hover { background:#0b6a5b; }
+.practice-meta span { color:#526b61; border-color:var(--line); }
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">DECi<span>PHER</span>iCS</div><small>FINANCIAL SYSTEMS DECODED</small></div></header>
+<div class="hero"><div class="wrap">
+<div class="eyebrow">Algorithm Intelligence · 001 · Candidate Retrieval</div>
+<h1>Understanding N-gram Matching &amp; Inverted Indexing</h1>
+<div class="subtitle">The theory, mathematics and engineering behind candidate retrieval.</div>
+<div class="meta"><span class="pill">Name screening</span><span class="pill">Information retrieval</span><span class="pill">Python</span><span class="pill">Foundational</span></div>
+<div class="hero-note"><b>Core idea:</b> N-grams turn names into smaller searchable patterns. An inverted index maps those patterns to the records that contain them, allowing a screening system to retrieve a shortlist of candidates without comparing the query against every record.</div>
+</div></div>
+<div class="wrap layout">
+<aside>
+<strong>On this page</strong>
+<a href="#problem">01 · Problem</a>
+<a href="#concept">02 · Concept</a>
+<a href="#types">03 · N-gram types</a>
+<a href="#index">04 · Inverted index</a>
+<a href="#working">05 · How it works</a>
+<a href="#math">06 · Mathematics</a>
+<a href="#examples">07 · Examples</a>
+<a href="#aml">08 · AML application</a>
+<a href="#limits">09 · Limitations</a>
+<a href="#alternatives">10 · Alternatives</a>
+<a href="#takeaways">11 · Key takeaways</a>
+</aside>
+<article>
+<section id="problem">
+<div class="kicker">01 · Problem</div><h2>Why exact matching fails</h2>
+<p class="lead">Exact string matching works only when two names are represented in precisely the same way. Real payment and watchlist data rarely behaves so neatly.</p>
+<p>Names can differ because of spelling variation, omitted characters, transliteration, token order, spacing, punctuation, aliases or inconsistent data entry. A direct equality check treats these variations as completely different strings.</p>
+<div class="card">
+<h3 style="margin-top:0">Illustrative screening examples</h3>
+<table><thead><tr><th>Payment name</th><th>Watchlist name</th><th>Why exact matching misses it</th></tr></thead><tbody>
+<tr><td>SAMEER</td><td>SAMIR</td><td>Different spelling and character sequence</td></tr>
+<tr><td>MOHAMMED</td><td>MUHAMMAD</td><td>Alternative transliteration</td></tr>
+<tr><td>ABDUL RAHMAN</td><td>ABDULRAHMAN</td><td>Spacing variation</td></tr>
+<tr><td>AL HUSSEIN</td><td>HUSSEIN AL</td><td>Token order variation</td></tr>
+</tbody></table>
+</div>
+<p>A screening platform therefore needs a candidate retrieval mechanism: given an incoming name, find a manageable set of potentially relevant reference-list records for more detailed comparison.</p>
+<div class="callout"><b>Important distinction:</b> Candidate retrieval is not the same as identity resolution. Retrieving a record means it shares one or more search patterns; it does not establish that both names refer to the same person or entity.</div>
+</section>
+<section id="concept">
+<div class="kicker">02 · Concept</div><h2>Understanding N-grams</h2>
+<p>An N-gram is a contiguous sequence of <i>N</i> characters or tokens extracted from a text string. In character N-grams, a sliding window moves across the text one character at a time.</p>
+<p>Take the name <code>SAMEER</code>. Using character trigrams (N = 3), the windows are <code>SAM</code>, <code>AME</code>, <code>MEE</code> and <code>EER</code>.</p>
+<div class="card">
+<div class="caption">CHARACTER TRIGRAMS · SAMEER</div>
+<div class="sequence"><span class="token hit">SAM</span><span class="token hit">AME</span><span class="token hit">MEE</span><span class="token hit">EER</span></div>
+<p class="caption">Each window overlaps the previous window by N − 1 characters.</p>
+</div>
+<p>For a string of length <i>L</i>, the number of character N-grams is:</p>
+<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Experiment with N-gram generation in the lab ↗</a>
+<div class="formula">Number of N-grams = max(0, L − N + 1)<small>L is the number of characters after the chosen normalisation policy; N is the gram size.</small></div>
+<p>For SAMEER, L = 6. It produces five bigrams, four trigrams and three four-grams.</p>
+</section>
+<section id="types">
+<div class="kicker">03 · N-gram types</div><h2>Unigram, bigram, trigram and higher</h2>
+<p>The value of N controls the size of each pattern. Smaller values create more matches and usually broader retrieval; larger values create more specific patterns but can miss names with small spelling differences.</p>
+<table><thead><tr><th>Type</th><th>N</th><th>Patterns from SAMEER</th><th>Typical behaviour</th></tr></thead><tbody>
+<tr><td>Unigram</td><td>1</td><td>S, A, M, E, E, R</td><td>Broad, low discrimination</td></tr>
+<tr><td>Bigram</td><td>2</td><td>SA, AM, ME, EE, ER</td><td>More selective than unigrams</td></tr>
+<tr><td>Trigram</td><td>3</td><td>SAM, AME, MEE, EER</td><td>Common starting point for character retrieval</td></tr>
+<tr><td>Four-gram</td><td>4</td><td>SAME, AMEE, MEER</td><td>More specific, less tolerant of edits</td></tr>
+<tr><td>Five-gram</td><td>5</td><td>SAMEE, AMEER</td><td>Highly specific for short names</td></tr>
+</tbody></table>
+<h3>Character N-grams vs token N-grams</h3>
+<p>Character N-grams operate inside words. Token N-grams operate on whole words or tokens. For example, the token sequence in <code>ABDUL RAHMAN</code> can produce the unigram tokens <code>ABDUL</code> and <code>RAHMAN</code>, and the bigram token sequence <code>ABDUL RAHMAN</code>.</p>
+<div class="grid">
+<div class="mini"><b>Character N-grams</b><p>Useful for spelling variation, partial overlap and approximate name retrieval.</p></div>
+<div class="mini"><b>Token N-grams</b><p>Useful for word-level structure, multi-part names and phrase retrieval.</p></div>
+</div>
+<p>The implementation must define its text policy: whether spaces are retained, whether punctuation is removed, how Unicode is normalised, and whether grams can cross word boundaries. There is no universally correct policy for every name corpus.</p>
+</section>
+<section id="index">
+<div class="kicker">04 · Inverted index</div><h2>From N-grams to an inverted index</h2>
+<p>Generating N-grams gives us searchable features. It does not, by itself, make searching a large reference list efficient. An inverted index is a data structure that maps each term or N-gram to the records in which it occurs.</p>
+<h3>Forward representation</h3>
+<p>A forward representation stores each record and its N-grams:</p>
+<pre>S001 → SAMEER  → SAM, AME, MEE, EER
+S002 → SAMIR   → SAM, AMI, MIR
+S003 → SAMEERA → SAM, AME, MEE, EER, ERA</pre>
+<h3>Inverted representation</h3>
+<p>The inverted index reverses the relationship. Each N-gram points to a posting list: the collection of record identifiers containing that gram.</p>
+<table><thead><tr><th>N-gram</th><th>Posting list (record IDs)</th></tr></thead><tbody>
+<tr><td><code>SAM</code></td><td>S001, S002, S003</td></tr><tr><td><code>AME</code></td><td>S001, S003</td></tr><tr><td><code>MEE</code></td><td>S001, S003</td></tr><tr><td><code>EER</code></td><td>S001, S003</td></tr><tr><td><code>AMI</code></td><td>S002</td></tr><tr><td><code>MIR</code></td><td>S002</td></tr><tr><td><code>ERA</code></td><td>S003</td></tr>
+</tbody></table>
+<div class="callout green"><b>Why “inverted”?</b> The lookup direction is reversed. Instead of asking “which N-grams belong to this record?”, the search asks “which records contain this N-gram?”</div>
+<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Build and inspect an inverted index ↗</a>
+<h3>What is stored in a posting list?</h3>
+<p>A basic posting list stores record IDs. A production index may also store term frequency, field name, token position, offsets, document frequency or other metadata needed for ranking and filtering. The right structure depends on the retrieval design.</p>
+</section>
+<section id="working">
+<div class="kicker">05 · Working</div><h2>Index construction and candidate retrieval</h2>
+<p>There are two distinct workflows: building or updating the index, and using it to retrieve candidates for an incoming screening query.</p>
+<h3>A. Build the index</h3>
+<div class="step"><div class="num">1</div><div><b>Load reference records</b><p>Read the names and stable record identifiers from the watchlist or reference database.</p></div></div>
+<div class="step"><div class="num">2</div><div><b>Normalise text</b><p>Apply the chosen case, Unicode, punctuation, whitespace and tokenisation policy consistently.</p></div></div>
+<div class="step"><div class="num">3</div><div><b>Generate N-grams</b><p>Generate the selected character and/or token N-grams for each searchable name field.</p></div></div>
+<div class="step"><div class="num">4</div><div><b>Populate posting lists</b><p>For every distinct gram in a record, add that record's ID to the gram's posting list.</p></div></div>
+<div class="step"><div class="num">5</div><div><b>Store index statistics</b><p>Maintain document frequency and, where required, term frequencies and weights.</p></div></div>
+<h3>B. Retrieve candidates</h3>
+<div class="step"><div class="num">1</div><div><b>Receive a query</b><p>For example, an incoming payment party name: <code>SAMEER</code>.</p></div></div>
+<div class="step"><div class="num">2</div><div><b>Apply the same normalisation and N-gram policy</b><p>Generate <code>SAM</code>, <code>AME</code>, <code>MEE</code> and <code>EER</code>.</p></div></div>
+<div class="step"><div class="num">3</div><div><b>Look up each gram</b><p>Fetch the posting list associated with each query gram from the inverted index.</p></div></div>
+<div class="step"><div class="num">4</div><div><b>Aggregate and deduplicate</b><p>Count or weight the number of query grams shared by each retrieved record.</p></div></div>
+<div class="step"><div class="num">5</div><div><b>Apply retrieval rules and rank</b><p>Use overlap, IDF weighting or another retrieval score to select a candidate set for downstream matching.</p></div></div>
+<h3>Worked retrieval example</h3>
+<p>Query: <code>SAMEER</code>. The query produces four trigrams. Looking up those four grams returns the following illustrative overlap counts:</p>
+<table><thead><tr><th>Candidate</th><th>Shared query grams</th><th>Overlap count</th></tr></thead><tbody>
+<tr><td>S001 · SAMEER</td><td>SAM, AME, MEE, EER</td><td>4</td></tr>
+<tr><td>S002 · SAMIR</td><td>SAM</td><td>1</td></tr>
+<tr><td>S003 · SAMEERA</td><td>SAM, AME, MEE, EER</td><td>4</td></tr>
+</tbody></table>
+<p>S001 and S003 tie on this simple overlap count. A later comparison stage can distinguish them using full-string similarity, token information and identity attributes.</p>
+<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Change the query and observe candidate retrieval ↗</a>
+<div class="callout amber"><b>Retrieval is a filter, not a verdict.</b> A record that shares several N-grams is a candidate for further examination. It is not automatically a match. Conversely, a record with no shared grams may be missed by this retrieval channel, which is why multiple retrieval strategies and recall testing matter.</div>
+</section>
+<section id="math">
+<div class="kicker">06 · Mathematics</div><h2>Similarity, overlap and term weighting</h2>
+<p>After retrieving records, a system may measure how much the query and candidate representations overlap. These scores describe similarity between representations; they are not probabilities that two names belong to the same person.</p>
+<h3>A. Jaccard similarity</h3>
+<p>Jaccard measures the size of the intersection divided by the size of the union of two N-gram sets.</p>
+<div class="formula">J(A,B) = |A ∩ B| / |A ∪ B|<small>A and B are sets of unique N-grams. The result ranges from 0 to 1.</small></div>
+<p>For <code>SAMEER</code> and <code>SAMIR</code>, the trigram sets are:</p>
+<pre>A = {SAM, AME, MEE, EER}
+B = {SAM, AMI, MIR}
+
+Intersection = {SAM}             → 1
+Union        = {SAM, AME, MEE, EER, AMI, MIR} → 6
+
+Jaccard = 1 / 6 = 0.1667</pre>
+<h3>B. Dice coefficient</h3>
+<p>Dice gives twice the weight to the intersection relative to the total size of both sets.</p>
+<div class="formula">Dice(A,B) = 2 × |A ∩ B| / (|A| + |B|)<small>For the SAMEER / SAMIR example: 2 × 1 / (4 + 3) = 0.2857.</small></div>
+<h3>C. Cosine similarity</h3>
+<p>Cosine compares two N-gram vectors. Each dimension represents a gram; its value can be a binary indicator, frequency or a weight such as TF-IDF.</p>
+<div class="formula">cos(A,B) = (A · B) / (||A|| × ||B||)<small>Vector representation makes it possible to account for gram frequencies and weights rather than only set membership.</small></div>
+<h3>D. Inverse document frequency (IDF)</h3>
+<p>Common grams often carry less identifying information than rare grams. IDF assigns lower weight to grams found in many records and higher weight to less common grams.</p>
+<div class="formula">IDF(g) = log(N / DF(g))<small>N = number of indexed records; DF(g) = number of records containing gram g. Smoothing is often added in practical implementations.</small></div>
+<p>A common smoothed variant is:</p>
+<div class="formula">IDF(g) = log(1 + (N / (1 + DF(g))))</div>
+<p>For example, if a trigram appears in 50,000 of 1,000,000 indexed records, it is less discriminative than a trigram appearing in only 20 records. IDF can help reduce the influence of very common patterns.</p>
+<div class="callout"><b>Keep the concepts separate:</b> N-gram generation creates the features. An inverted index makes those features searchable. Jaccard, Dice and Cosine compare representations. IDF weights features according to how widely they occur in the corpus.</div>
+<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Experiment with overlap and similarity scores ↗</a>
+</section>
+<section id="examples">
+<div class="kicker">07 · Examples</div><h2>Simple, medium and complex cases</h2>
+<h3>Example 1 · Simple: exact spelling</h3>
+<p>Compare <code>SAMEER</code> with <code>SAMEER</code> using trigrams.</p>
+<pre>A = {SAM, AME, MEE, EER}
+B = {SAM, AME, MEE, EER}
+
+Intersection = 4
+Union = 4
+Jaccard = 4 / 4 = 1.00</pre>
+<p>The representations are identical under this normalisation and gram-size policy. This says nothing by itself about whether the real-world identity is the same; names are not unique identifiers.</p>
+<h3>Example 2 · Medium: spelling variation</h3>
+<p>Compare <code>SAMEER</code> with <code>SAMIR</code>.</p>
+<pre>A = {SAM, AME, MEE, EER}
+B = {SAM, AMI, MIR}
+
+Common grams = {SAM}
+Union size = 6
+Jaccard = 1 / 6 = 0.1667</pre>
+<p>Only one trigram overlaps. A strict trigram overlap threshold could fail to retrieve this candidate. A multi-channel system could add phonetic retrieval, smaller grams or edit-distance-based retrieval to improve coverage.</p>
+<h3>Example 3 · Complex: transliteration variation</h3>
+<p>Consider <code>MOHAMMED ALI</code> and <code>MUHAMMAD ALI</code>. These spellings may be transliteration variants of a name, but a basic character trigram index does not understand that linguistic relationship. It only sees character sequences.</p>
+<p>A stronger retrieval design can:</p>
+<ul>
+<li>Normalise Unicode consistently and preserve the original source value.</li>
+<li>Generate character N-grams from the original and approved transliteration variants.</li>
+<li>Index tokens and useful token combinations separately.</li>
+<li>Use phonetic or language-aware retrieval where appropriate.</li>
+<li>Merge and deduplicate candidates from the different retrieval channels.</li>
+<li>Evaluate whether known true matches are being retrieved, not just whether the returned names look similar.</li>
+</ul>
+<div class="callout green"><b>Engineering lesson:</b> A single N-gram configuration is unlikely to provide sufficient recall across every script, language, name length and transliteration convention. Retrieval should be evaluated against representative, labelled data.</div>
+</section>
+<section id="aml">
+<div class="kicker">08 · AML application</div><h2>Using N-grams in sanctions and payment screening</h2>
+<p>In payment screening, a system extracts relevant parties from a payment message and compares them with sanctions, watchlist or other reference data. For an ISO 20022 payment, relevant parties may include the debtor, creditor and agents or intermediaries, depending on the screening policy and message flow.</p>
+<h3>Illustrative flow</h3>
+<div class="card">
+<div class="step"><div class="num">1</div><div><b>Payment ingestion</b><p>Receive a payment message such as <code>pacs.008</code> and extract the party names and available identifiers.</p></div></div>
+<div class="step"><div class="num">2</div><div><b>Normalisation</b><p>Standardise the searchable representation while retaining the original name for audit and investigation.</p></div></div>
+<div class="step"><div class="num">3</div><div><b>Candidate retrieval</b><p>Generate N-grams and query the inverted index, alongside other retrieval channels.</p></div></div>
+<div class="step"><div class="num">4</div><div><b>Feature calculation</b><p>Calculate name similarity and compare additional available attributes such as date of birth, country and identifiers.</p></div></div>
+<div class="step"><div class="num">5</div><div><b>Scoring and disposition</b><p>Apply the approved matching policy and risk framework to support clearance, investigation or escalation.</p></div></div>
+</div>
+<h3>Where N-grams fit</h3>
+<table><thead><tr><th>Pipeline stage</th><th>Role</th></tr></thead><tbody>
+<tr><td>Candidate retrieval</td><td><span class="badge">Primary use</span> Find reference records sharing character patterns.</td></tr>
+<tr><td>Feature engineering</td><td>Provide overlap or weighted-overlap features for downstream scoring.</td></tr>
+<tr><td>Candidate ranking</td><td>Contribute to ranking when combined with other retrieval signals.</td></tr>
+<tr><td>Final decision</td><td>Not sufficient on its own to establish a true match or justify a block.</td></tr>
+</tbody></table>
+<h3>How to measure retrieval quality</h3>
+<div class="grid">
+<div class="mini"><b>Recall@K</b><p>Of all known relevant matches, what proportion appears in the top K retrieved candidates?</p></div>
+<div class="mini"><b>Precision@K</b><p>Of the top K retrieved candidates, what proportion is relevant?</p></div>
+<div class="mini"><b>Candidate volume</b><p>How many candidates proceed to detailed matching and investigation?</p></div>
+<div class="mini"><b>Latency</b><p>How long does index lookup and candidate aggregation take?</p></div>
+</div>
+<p>For a screening retrieval layer, missing a genuine match can be more serious than retrieving extra candidates. Thresholds therefore need to be selected using labelled data, operational capacity and the institution's risk appetite. Candidate reduction should never be optimised at the expense of unacceptable recall.</p>
+</section>
+<section id="limits">
+<div class="kicker">09 · Limitations</div><h2>Where N-gram retrieval can fail</h2>
+<table><thead><tr><th>Limitation</th><th>Why it matters</th><th>Potential mitigation</th></tr></thead><tbody>
+<tr><td>Short names</td><td>Very few grams are available; one edit can change much of the representation.</td><td>Adaptive gram sizes and other retrieval channels.</td></tr>
+<tr><td>Transliteration</td><td>Different scripts or spellings may share few or no character grams.</td><td>Language-aware transliteration and multilingual retrieval.</td></tr>
+<tr><td>Common grams</td><td>Frequent grams create large posting lists and noisy candidates.</td><td>IDF weighting, stop-gram policies and ranking.</td></tr>
+<tr><td>Token order</td><td>Character grams do not inherently understand name-part order.</td><td>Token-based features and order-insensitive matching.</td></tr>
+<tr><td>Boundary policy</td><td>Removing spaces can create grams across word boundaries; retaining them can make spacing changes disruptive.</td><td>Explicit and consistently applied field/token policies.</td></tr>
+<tr><td>Index maintenance</td><td>New, amended or deleted list entries must be reflected correctly.</td><td>Incremental updates, versioning and reconciliation.</td></tr>
+<tr><td>Threshold selection</td><td>Restrictive thresholds can silently exclude true candidates.</td><td>Measure recall on representative labelled datasets.</td></tr>
+<tr><td>Resource use</td><td>Large posting lists and many gram variants increase storage and query work.</td><td>Compression, partitioning, pruning and query planning.</td></tr>
+</tbody></table>
+<p>Indexing improves the search process, but it does not remove the need to design for recall, data quality, update consistency, explainability and operational monitoring.</p>
+</section>
+<section id="alternatives">
+<div class="kicker">10 · Alternatives</div><h2>Related and more advanced approaches</h2>
+<table><thead><tr><th>Technique</th><th>What it contributes</th><th>How it relates</th></tr></thead><tbody>
+<tr><td>TF-IDF</td><td>Weights grams by their frequency in a record and rarity across the corpus.</td><td>Builds on N-gram features.</td></tr>
+<tr><td>BM25</td><td>Ranks records using term-frequency saturation and document-length normalisation.</td><td>Information-retrieval ranking approach; often token-oriented, adaptable to gram terms.</td></tr>
+<tr><td>MinHash</td><td>Creates compact signatures that estimate set similarity.</td><td>Can reduce the cost of approximate set-similarity search.</td></tr>
+<tr><td>Locality-Sensitive Hashing (LSH)</td><td>Maps similar representations into buckets with higher probability than dissimilar ones.</td><td>Approximate retrieval; trades exactness for speed and scale.</td></tr>
+<tr><td>Phonetic algorithms</td><td>Encode pronunciation-related patterns.</td><td>Complement character-based retrieval, especially for spelling variation.</td></tr>
+<tr><td>Embeddings</td><td>Represent text as vectors that can capture broader linguistic patterns.</td><td>Alternative or additional retrieval channel; not proof of identity.</td></tr>
+</tbody></table>
+<div class="callout"><b>Practical design:</b> A robust screening system can combine character N-grams, phonetic retrieval, transliteration and token-based retrieval. Merge the candidate sets, then use richer identity features and controlled decision logic downstream. No single retrieval technique should be assumed to cover every relevant match.</div>
+</section>
+<section id="takeaways">
+<div class="kicker">11 · Key takeaways</div><h2>When and why to use N-gram matching</h2>
+<div class="card">
+<ul>
+<li><b>N-grams</b> break strings into overlapping character or token sequences.</li>
+<li><b>An inverted index</b> maps each N-gram to the records containing it.</li>
+<li><b>Posting lists</b> make it possible to retrieve candidate records through index lookups rather than scanning every record.</li>
+<li><b>Similarity measures</b> such as Jaccard, Dice and Cosine compare representations; they are not identity probabilities.</li>
+<li><b>IDF weighting</b> reduces the influence of common patterns and emphasises more discriminative grams.</li>
+<li><b>Retrieval quality</b> must be measured with recall, precision, candidate volume and latency.</li>
+<li><b>AML screening</b> requires multiple retrieval channels and downstream identity assessment; N-gram overlap alone cannot establish a sanctions match.</li>
+</ul>
+</div>
+<h3>The central engineering principle</h3>
+<p class="lead">Use N-grams to find candidates. Use an inverted index to find them efficiently. Use richer evidence and governed decision logic to assess whether they matter.</p>
+<div class="callout green"><b>Continue learning:</b> The natural next topic is TF-IDF and weighted N-gram retrieval, followed by BM25 and approximate similarity search.</div>
+</section>
+<section class="practice-section" id="put-theory-into-practice">
+<div class="practice-layout">
+<div>
+<div class="kicker">ALGORITHM INTELLIGENCE</div>
+<h2>Ready to experiment with N-grams?</h2>
+<p class="lead">Explore how character sequences are generated, how inverted indexes retrieve candidates, and how similarity scores change as you modify the input.</p>
+<p>The article explains the concepts and mathematics. The interactive lab is a separate hands-on experience where you can experiment with data, indexes and retrieval.</p>
+<div class="practice-meta">
+<span>Algorithm Intelligence #001</span>
+<span>Understand the concepts and mathematics</span>
+<span>Explore in practice</span>
+</div>
+</div>
+<a class="practice-action" href="/labs/ngram-inverted-index-lab.html">Explore N-gram &amp; Inverted Index Lab ↗</a>
+</div>
+</section>
+<div class="footer">
+<b>DECiPHERiCS · Algorithm Intelligence #001</b><br/>
+  Financial Systems Decoded · Educational material for technical learning. Screening implementations must be validated against the institution's data, policies and risk requirements.
+</div>
+</article>
+</div>
+<script>
+const links=[...document.querySelectorAll('aside a')];
+const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+    }
+  });
+},{rootMargin:'-18% 0px -70% 0px'});
+sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
