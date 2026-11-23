@@ -1,25 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#e9ecd8">
-  <meta name="description" content="DECiPHERiCS is an independent Financial Crime Intelligence Lab exploring AML, sanctions screening, transaction intelligence and explainable AI through research and practical experiments.">
-  <meta name="author" content="DECiPHERiCS">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://decipherics.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="DECiPHERiCS">
-  <meta property="og:title" content="DECiPHERiCS | Financial Crime Intelligence Lab">
-  <meta property="og:description" content="Understanding, building and testing the intelligence behind financial-crime detection.">
-  <meta property="og:url" content="https://decipherics.com/">
-  <meta property="og:image" content="https://decipherics.com/decipherics_logo.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="DECiPHERiCS | Financial Crime Intelligence Lab">
-  <meta name="twitter:description" content="Research · Build · Test · Learn">
-  <meta name="twitter:image" content="https://decipherics.com/decipherics_logo.png">
-  <title>DECiPHERiCS | Financial Crime Intelligence Lab</title>
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#e9ecd8" name="theme-color"/>
+<meta content="DECiPHERiCS is an independent Financial Crime Intelligence Lab exploring AML, sanctions screening, transaction intelligence and explainable AI through research and practical experiments." name="description"/>
+<meta content="DECiPHERiCS" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://decipherics.com/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="DECiPHERiCS" property="og:site_name"/>
+<meta content="DECiPHERiCS | Financial Crime Intelligence Lab" property="og:title"/>
+<meta content="Understanding, building and testing the intelligence behind financial-crime detection." property="og:description"/>
+<meta content="https://decipherics.com/" property="og:url"/>
+<meta content="https://decipherics.com/decipherics_logo.png" property="og:image"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="DECiPHERiCS | Financial Crime Intelligence Lab" name="twitter:title"/>
+<meta content="Research · Build · Test · Learn" name="twitter:description"/>
+<meta content="https://decipherics.com/decipherics_logo.png" name="twitter:image"/>
+<title>DECiPHERiCS | Financial Crime Intelligence Lab</title>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -29,7 +30,7 @@
     "description": "An independent Financial Crime Intelligence Lab focused on AML, sanctions screening, transaction intelligence and explainable AI."
   }
   </script>
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -37,7 +38,7 @@
     "url": "https://decipherics.com/"
   }
   </script>
-  <style>
+<style>
     :root {
       --paper: #e9ecd8;
       --paper-2: #f4f5eb;
@@ -275,7 +276,6 @@ footer{border-top:1px solid var(--line)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
-
 <style>
   /* Homepage improvements: accessible mobile navigation, research detail and transparency */
   .menu-toggle {
@@ -331,7 +331,6 @@ footer{border-top:1px solid var(--line)}
     .menu-toggle span { transition:none; }
   }
 </style>
-
 <style>
   /* Feedback invitation: clear, low-friction route for early reviewers */
   .feedback { background:#eef1e4; }
@@ -348,8 +347,6 @@ footer{border-top:1px solid var(--line)}
     .feedback-action { align-items:stretch; flex-direction:column; }
   }
 </style>
-
-
 <style>
   /* DECiPHERiCS live archive + feedback form */
   .feedback-form-wrap { display:block; margin-top:20px; }
@@ -381,7 +378,6 @@ footer{border-top:1px solid var(--line)}
     .feedback-submit-row { align-items:flex-start; flex-direction:column; }
   }
 </style>
-
 <style>
 /* Hybrid Intelligence Lab visual refresh — preserves existing content and integrations */
 :root{--lab-night:#082f2d;--lab-night-2:#10443e;--lab-mint:#b9d9c8;--lab-gold:#dfb36b;--lab-paper:#f5f5eb}
@@ -421,382 +417,394 @@ footer{border-top:1px solid var(--line)}
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr;gap:24px}.hero-inner{padding:25px 0 10px}.hero-visual{min-height:350px}.network-stage{height:265px}}
 @media(max-width:600px){.hero{padding:40px 0 48px}.hero-layout{width:min(100% - 32px,var(--max))}.hero-inner{padding:20px 0 8px}.hero h1{font-size:clamp(43px,13vw,65px)}.hero-copy{font-size:15px}.hero-visual{min-height:300px;padding:14px}.network-stage{height:230px}.visual-footer{font-size:8px}.hero-actions .button{width:100%}.hero-note{font-size:9px;gap:9px}}
 </style>
-
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <nav aria-label="Main navigation">
-        <a class="wordmark" href="#home" aria-label="DECiPHERiCS — Financial Crime Intelligence Lab home"><img src="decipherics_logo.png" alt="DECiPHERiCS — Financial Crime Intelligence Lab"></a>
-        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-          <span></span><span></span><span></span>
-        </button>
-        <div class="navlinks" id="primary-navigation">
-          <a href="#mission">Mission</a>
-          <a href="#about">About</a>
-          <a href="#capabilities">Research areas</a>
-          <a href="#approach">Approach</a>
-          <a href="#decoded">AML Decoded</a>
-          <a href="#feedback">Feedback</a>
-          <a class="nav-cta" href="#explore-lab">Explore Lab</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="wrap">
-        <div class="hero-layout">
-          <div class="hero-inner">
-            <div class="eyebrow"><span class="eyebrow-dot"></span> Independent research · Applied engineering</div>
-            <h1>DECiPHERiCS</h1>
-            <div class="subbrand">Financial Crime Intelligence Lab</div>
-            <p class="hero-copy">Decode the technology behind financial-crime detection. Explore practical research, test algorithms in interactive labs and examine the evidence behind intelligent decisions.</p>
-            <div class="hero-actions">
-              <a class="button primary" href="/labs/screening-parse-lab.html" data-track="screening-lab">Explore Screening Intelligence Lab <span>↗</span></a>
-              <a class="button secondary" href="#decoded">Explore Research</a>
-              <a class="button secondary" href="#feedback">Share feedback</a>
-            </div>
-            <div class="hero-note">Investigate <i></i> Experiment <i></i> Understand</div>
-          </div>
-          <aside class="hero-visual" aria-label="Illustrative financial intelligence network visualisation">
-            <div class="visual-topline"><span>INTELLIGENCE / NETWORK VIEW</span><span class="live-indicator">CONCEPT</span></div>
-            <div class="network-stage">
-              <svg class="network-lines" viewBox="0 0 520 350" role="img" aria-label="Connected entities and relationship paths">
-                <g fill="none" stroke="#7fc4ad" stroke-width="1.4" opacity=".55">
-                  <path d="M72 174 L178 91 L282 151 L410 74 M178 91 L220 270 L282 151 L430 244 M72 174 L220 270 L105 300 M282 151 L365 320 L430 244 M410 74 L430 244"/>
-                  <path d="M178 91 L365 320 M72 174 L430 244" stroke-dasharray="4 7" opacity=".55"/>
-                </g>
-                <g fill="#0c5149" stroke="#a5d8c4" stroke-width="2">
-                  <circle cx="72" cy="174" r="9"/><circle cx="178" cy="91" r="13"/><circle cx="282" cy="151" r="17"/><circle cx="410" cy="74" r="10"/><circle cx="430" cy="244" r="13"/><circle cx="220" cy="270" r="10"/><circle cx="105" cy="300" r="6"/><circle cx="365" cy="320" r="7"/>
-                </g>
-                <circle cx="282" cy="151" r="29" fill="none" stroke="#e0b66e" stroke-width="1.5" opacity=".8"/>
-                <g fill="#d9e9df" font-family="monospace" font-size="10"><text x="48" y="153">ENTITY A</text><text x="155" y="64">ALIAS</text><text x="254" y="119">MATCH</text><text x="384" y="49">ENTITY C</text><text x="404" y="270">ACCOUNT</text><text x="190" y="294">LINK</text></g>
-              </svg>
-              <div class="visual-signal signal-one"><span>SIMILARITY</span><strong>0.92</strong></div>
-              <div class="visual-signal signal-two"><span>RELATIONSHIPS</span><strong>08 LINKS</strong></div>
-            </div>
-            <div class="visual-footer"><span><b></b> ENTITY RESOLUTION</span><span>DATA · CONTEXT · EVIDENCE</span></div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="latest-lab" id="latest">
-      <div class="wrap">
-        <div class="section-head" style="margin-bottom:26px;">
-          <div class="kicker">Latest / Lab updates</div>
-          <h2>What’s new in the lab.</h2>
-          <p class="lead">New research publications and practical workbenches from DECiPHERiCS.</p>
-        </div>
-        <div class="latest-grid">
-          <article class="latest-item" id="latestResearchCard">
-            <div class="latest-label" id="latestResearchLabel">Latest research publication · AML Decoded #008</div>
-            <h3 id="latestResearchTitle">Why One Normalised Name Is Not Enough</h3>
-            <p id="latestResearchDescription">Why name screening needs multiple representations of an identity — original, normalised, tokenised, transliterated and alias-aware — to improve candidate retrieval and downstream matching.</p>
-            <a class="article-link" id="latestResearchLink" href="https://lnkd.in/p/dgFJneHd" target="_blank" rel="noopener noreferrer" aria-label="Read AML Decoded #008 on LinkedIn">Read AML Decoded #008 on LinkedIn ↗</a>
-          </article>
-          <article class="latest-item">
-            <div class="latest-label">Interactive workbench · Available now</div>
-            <h3>Screening Intelligence Lab</h3>
-            <p>Explore the Screening Intelligence Lab — From Payment Message to Screening Decision. Follow how ISO 20022 payment data is parsed, names are extracted and prepared for screening experiments.</p>
-            <a class="article-link" href="/labs/screening-parse-lab.html" data-track="screening-lab-latest">Open Screening Intelligence Lab ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="mission" id="mission">
-      <div class="wrap">
-        <div class="kicker">01 / Why this lab exists</div>
-        <div class="mission-intro">
-          <p class="mission-statement">Learn. Experiment. Research. Contribute.</p>
-          <div>
-            <h2>A shared space for understanding financial-crime technology.</h2>
-            <p class="mission-copy">DECiPHERiCS is an independent learning, research and experimentation lab focused on the technology behind financial-crime detection. It is designed to move beyond theoretical discussions and explore how financial-crime systems actually work — from sanctions data engineering and entity resolution to payment screening, machine learning, graph analytics and transaction monitoring.</p>
-            <p class="mission-copy">The objective is to create a practical space where practitioners, technology professionals, researchers and learners can build understanding, test ideas, examine limitations and share what they discover.</p>
-          </div>
-        </div>
-        <div class="mission-pillars">
-          <article class="mission-pillar"><b>01</b><h3>Learn</h3><p>Understand concepts, architectures, algorithms and the data foundations behind AML systems.</p></article>
-          <article class="mission-pillar"><b>02</b><h3>Experiment</h3><p>Build prototypes, test approaches and compare methods using controlled or synthetic datasets.</p></article>
-          <article class="mission-pillar"><b>03</b><h3>Research</h3><p>Investigate emerging techniques across AI, NLP, machine learning and graph analytics.</p></article>
-          <article class="mission-pillar"><b>04</b><h3>Contribute</h3><p>Share ideas, challenge findings, suggest experiments and help expand the collective knowledge base.</p></article>
-        </div>
-        <div class="contribute-note"><strong>Built to be challenged:</strong> Suggest a research question, question an assumption, share a use case or point out where an experiment falls short. Critical feedback is part of the research process.</div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="wrap intro-grid">
-        <div>
-          <div class="kicker">02 / The lab</div>
-          <p class="statement">Financial crime detection is not one algorithm. It is a connected system of data, decisions, context and evidence.</p>
-        </div>
-        <div>
-          <h2>Make complex systems understandable.</h2>
-          <p class="intro-text">DECiPHERiCS is a hands-on research and engineering environment focused on the technology behind AML and financial-crime intelligence. It brings together practical prototypes, controlled experiments and technical learning across sanctions screening, payment intelligence and transaction monitoring.</p>
-          <div class="principles">
-            <div class="principle"><b>01</b><div><strong>Evidence over assumptions</strong><span>Test techniques against defined datasets and measurable outcomes.</span></div></div>
-            <div class="principle"><b>02</b><div><strong>Explainable by design</strong><span>Make matching signals, model outputs and decisions inspectable.</span></div></div>
-            <div class="principle"><b>03</b><div><strong>Engineering with context</strong><span>Connect algorithms to real payment, customer and compliance workflows.</span></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="capabilities" id="capabilities">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">03 / Research areas</div>
-          <h2>Explore the intelligence stack.</h2>
-          <p class="lead">A connected set of research areas, moving from the quality of source data to the interpretation of risk and the evidence behind a decision.</p>
-        </div>
-        <div class="cards">
-          <article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions & Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><p class="research-detail">In focus: sanctions data ingestion, name normalisation, candidate retrieval, fuzzy matching and explainable entity resolution.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Explore the Screening Intelligence Lab ↗</a><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a><a class="related-reading" href="#latest">Related reading: AML Decoded #008 — Why One Normalised Name Is Not Enough ↗</a></article>
-          <article class="card"><div class="card-num">02 — LANGUAGE & MATCHING</div><h3>NLP & Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="#article-006">Related reading: AML Decoded #006 — The NLP Behind Name Normalisation ↗</a><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a></article>
-          <article class="card"><div class="card-num">03 — MODEL INTELLIGENCE</div><h3>Machine Learning & Evaluation</h3><p>Feature engineering, model comparison, ranking, calibration, performance measurement and model limitations.</p><span class="tag">Applied ML research</span><p class="research-detail">In focus: feature design, ranking, calibration, validation strategy, threshold selection and model limitations.</p><span class="research-status">Research notes in development</span></article>
-          <article class="card"><div class="card-num">04 — PAYMENT INTELLIGENCE</div><h3>Payment & Transaction Screening</h3><p>ISO 20022 message structures, party extraction, payment context, screening workflows and decision controls.</p><span class="tag">Payment systems</span><p class="research-detail">In focus: ISO 20022 structures, party extraction, message context, screening stages and decision traceability.</p><a class="related-reading" href="#article-002">Related reading: AML Decoded #002 ↗</a></article>
-          <article class="card"><div class="card-num">05 — BEHAVIOURAL INTELLIGENCE</div><h3>Transaction Monitoring</h3><p>Typologies, synthetic transaction scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="tag">Behaviour & patterns</span><p class="research-detail">In focus: typologies, synthetic scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="research-status">Research notes in development</span></article>
-          <article class="card"><div class="card-num">06 — NETWORK INTELLIGENCE</div><h3>Graph Analytics</h3><p>Entity relationships, ownership links, connected accounts, transaction paths and network-based risk signals.</p><span class="tag">Relationships & networks</span><p class="research-detail">In focus: ownership links, connected entities, transaction paths, network features and graph-based risk signals.</p><span class="research-status">Research notes in development</span></article>
-          <article class="card"><div class="card-num">07 — INVESTIGATION</div><h3>Explainability & Case Intelligence</h3><p>Evidence traceability, alert context, investigation workflows and human-centred decision support.</p><span class="tag">Decision support</span><p class="research-detail">In focus: evidence traceability, alert context, investigation workflows and human review.</p><span class="research-status">Research notes in development</span></article>
-          <article class="card"><div class="card-num">08 — EMERGING METHODS</div><h3>AI & Financial Crime</h3><p>Explore responsible applications of generative AI, assisted analysis and automation with clear human oversight.</p><span class="tag">Emerging research</span><p class="research-detail">In focus: assisted analysis, responsible automation, human oversight and evaluation of generative AI outputs.</p><span class="research-status">Research notes in development</span></article>
-          <article class="card"><div class="card-num">09 — DATA FOUNDATION</div><h3>Data Engineering & Governance</h3><p>Source quality, ingestion pipelines, provenance, versioning, reproducibility and controlled experimentation.</p><span class="tag">Trustworthy data</span><p class="research-detail">In focus: source quality, ingestion pipelines, provenance, watchlist versioning and reproducible experiments.</p><a class="related-reading" href="#article-003">Related reading: AML Decoded #003 ↗</a><a class="related-reading" href="#article-005">Related reading: AML Decoded #005 ↗</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="method" id="approach">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">04 / Our approach</div>
-          <h2>From question to evidence.</h2>
-          <p class="lead">The lab follows an experiment-led approach: understand the problem, build a testable method, measure the outcome and document what the evidence does—and does not—show.</p>
-        </div>
-        <div class="steps">
-          <div class="step"><small>STEP 01</small><h3>Frame the problem</h3><p>Define the financial-crime use case, data assumptions and decision objective.</p></div>
-          <div class="step"><small>STEP 02</small><h3>Build the experiment</h3><p>Create a prototype, dataset or workflow that makes the hypothesis testable.</p></div>
-          <div class="step"><small>STEP 03</small><h3>Measure & challenge</h3><p>Evaluate performance, edge cases, operational trade-offs and failure modes.</p></div>
-          <div class="step"><small>STEP 04</small><h3>Explain the findings</h3><p>Publish the method, results, limitations and lessons for further investigation.</p></div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="explore-lab" id="explore-lab">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">05 / Explore Lab</div>
-          <h2>From research to working experiments.</h2>
-          <p class="lead">Explore practical workbenches that turn financial-crime research into testable experiments. The Screening Intelligence Lab is available now; additional workbenches will be added as they are developed.</p>
-        </div>
-        <div class="cards">
-          <article class="lab-card"><div class="card-num">WORKBENCH 01 · AVAILABLE NOW</div><h3>Screening Intelligence Lab</h3><p>From Payment Message to Screening Decision. Explore ISO 20022 payment parsing, name extraction, normalisation, candidate retrieval, similarity methods and explainable screening outcomes.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Open Screening Intelligence Lab ↗</a></article>
-          <article class="lab-card"><div class="card-num">WORKBENCH 02 · IN DEVELOPMENT</div><h3>Payment Intelligence Lab</h3><p>Inspect payment-message structures, party extraction, screening stages and decision traceability across payment flows.</p><span class="tag">Planned workbench</span></article>
-          <article class="lab-card"><div class="card-num">WORKBENCH 03 · IN DEVELOPMENT</div><h3>Graph & Behaviour Lab</h3><p>Experiment with entity relationships, transaction networks, behavioural patterns and investigation signals.</p><span class="tag">Planned workbench</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="series" id="decoded">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">06 / Knowledge & field notes</div>
-          <h2>Complexity, decoded.</h2>
-          <p class="lead">AML Decoded is the technical publication stream connected to the lab. Search the growing archive by article number, topic or keyword, and follow each link to the complete publication on LinkedIn.</p>
-        </div>
-        <div class="series-panel">
-          <div>
-            <div class="kicker">Order in Chaos · Financial Systems Decoded</div>
-            <h3>AML Decoded</h3>
-            <p>Short summaries and key ideas live here on DECiPHERiCS. Each publication links to its complete article on LinkedIn, keeping the full discussion and engagement in one place.</p>
-          </div>
-          <div class="series-mark">ARTICLE SUMMARIES<br>LINKEDIN PUBLICATIONS<br>RESEARCH NOTES</div>
-        </div>
-
-
-        <div class="archive-tools" role="search" aria-label="Search AML Decoded archive">
-          <input id="articleSearch" type="search" placeholder="Search by article number, title or keyword…" aria-label="Search articles">
-          <select id="articleCategory" aria-label="Filter by category">
-            <option value="all">All categories</option>
-            <option value="name-screening">Name screening</option>
-            <option value="payment-screening">Payment screening</option>
-            <option value="knowledge-base">Knowledge base & data governance</option>
-            <option value="data-engineering">Data engineering</option>
-            <option value="nlp-normalisation">NLP & name normalisation</option>
-            <option value="financial-systems">Financial systems</option>
-            <option value="safe-decoded">SAFe Decoded</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <p class="archive-count" id="archiveCount" aria-live="polite">Showing 8 of 8 entries</p>
-        <div class="article-grid" id="articleGrid" aria-label="AML Decoded article summaries">
-          <article class="article-card" id="article-008" data-article-number="#008" data-category="nlp-normalisation" data-search="008 why one normalised name is not enough name normalisation normalization aliases transliteration tokenisation tokenization entity resolution name screening NLP">
-            <div class="article-meta">AML DECODED #008 · NLP & NAME REPRESENTATION</div>
-            <h3>Why One Normalised Name Is Not Enough</h3>
-            <div class="article-date"><time datetime="2026-11-21">Published 21 Nov 2026</time> · 5 min read</div>
-            <div class="article-tags"><span>NLP</span><span>Name Normalisation</span><span>Entity Resolution</span></div>
-            <p>Why name screening needs multiple representations of an identity — original, normalised, tokenised, transliterated and alias-aware — to improve candidate retrieval and downstream matching.</p>
-            <a class="article-link" href="https://lnkd.in/p/dgFJneHd" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-008">Read AML Decoded #008 on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
-          </article>
-          <article class="article-card" id="article-007" data-article-number="#007" data-category="name-screening" data-search="007 candidate retrieval right watchlist records sanctions name screening entity resolution NLP">
-            <div class="article-meta">AML DECODED #007 · CANDIDATE RETRIEVAL</div>
-            <h3>Candidate Retrieval: Finding the Right Watchlist Records</h3>
-            <div class="article-date">Published 20 Nov 2026</div>
-            <div class="article-tags"><span>Sanctions</span><span>Candidate Retrieval</span><span>NLP</span></div>
-            <p>How a screening system narrows a large watchlist into a relevant candidate set, balancing retrieval coverage, efficiency and downstream matching quality.</p>
-            <a class="article-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7529506400721575936/" target="_blank" rel="noopener noreferrer">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
-          </article>
-          
-          <article class="article-card" id="article-001" data-category="name-screening" data-search="001 sanctions name screening comparing two strings transliteration aliases entity resolution">
-            <div class="article-meta">AML DECODED #001 · NAME SCREENING</div>
-            <h3>Why Is Sanctions Name Screening Harder Than Comparing Two Strings?</h3>
-            <div class="article-date"><time datetime="2026-11-05">Published 05 Nov 2026</time> · 6 min read</div>
-            <div class="article-tags"><span>Sanctions</span><span>NLP</span><span>Entity Resolution</span></div>
-            <p>Names can vary through transliteration, diacritics, aliases, abbreviations and inconsistent data. This article explains why string similarity is not identity similarity, and why candidate retrieval, contextual attributes and governed decisions all matter.</p>
-            <a class="article-link" href="https://lnkd.in/p/d2J8Ut3V" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-001">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
-          </article>
-          <article class="article-card" id="article-002" data-category="payment-screening" data-search="002 payment message screening decision iso 20022 payment intelligence">
-            <div class="article-meta">AML DECODED #002 · PAYMENT SCREENING</div>
-            <h3>From Payment Message to Screening Decision</h3>
-            <div class="article-date"><time datetime="2026-11-10">Published 10 Nov 2026</time> · 5 min read</div>
-            <div class="article-tags"><span>ISO 20022</span><span>Payment Screening</span></div>
-            <p>Explore the journey from an incoming payment message to a screening outcome, and the stages that connect payment data, party information, screening logic and a reviewable decision.</p>
-            <a class="article-link" href="https://lnkd.in/p/dkepNrAG" target="_blank" rel="noopener noreferrer">Read the complete article on LinkedIn ↗</a>
-          </article>
-          <article class="article-card" id="article-003" data-category="knowledge-base" data-search="003 sanctions knowledge base entities aliases watchlist data engineering">
-            <div class="article-meta">AML DECODED #003 · KNOWLEDGE BASE</div>
-            <h3>What Is a Sanctions Knowledge Base?</h3>
-            <div class="article-date"><time datetime="2026-11-11">Published 11 Nov 2026</time> · 5 min read</div>
-            <div class="article-tags"><span>Sanctions</span><span>Data Engineering</span></div>
-            <p>An introduction to the structured information that supports sanctions screening: entities, names, aliases and the data foundation used to identify and assess potential matches.</p>
-            <a class="article-link" href="https://lnkd.in/p/dyY3C_7u" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-003">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
-          </article>
-          <article class="article-card" id="article-004" data-category="data-engineering" data-search="004 building sanctions data pipeline ingestion validation transformation provenance data engineering">
-            <div class="article-meta">AML DECODED #004 · DATA ENGINEERING</div>
-            <h3>Building a Sanctions Data Pipeline</h3>
-            <p>Explore the stages involved in building a sanctions data pipeline, from source ingestion and data validation to transformation and preparation for downstream screening.</p>
-            <div class="article-tags"><span>Data Engineering</span><span>Sanctions</span><span>Data Quality</span></div>
-            <a class="article-link" href="https://lnkd.in/p/diNzSBWd" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-004">Read AML Decoded #004 on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
-          </article>
-          <article class="article-card" id="article-005" data-category="knowledge-base" data-search="005 watchlist data version control sanctions data governance versioning change history reproducibility">
-            <div class="article-meta">AML DECODED #005 · WATCHLIST DATA & GOVERNANCE</div>
-            <h3>Why Watchlist Data Needs Version Control</h3>
-            <div class="article-date"><time datetime="2026-11-12">Published 12 Nov 2026</time> · 5 min read</div>
-            <div class="article-tags"><span>Sanctions</span><span>Data Governance</span></div>
-            <p>Why changes to watchlist data need to be tracked and controlled, with version history supporting traceability and reproducibility in sanctions screening.</p>
-            <a class="article-link" href="https://lnkd.in/p/dG4sfU3s" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-005">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
-          </article>
-          <article class="article-card" id="article-006" data-category="nlp-normalisation" data-search="006 nlp natural language processing name normalisation name normalization text processing screening">
-            <div class="article-meta">AML DECODED #006 · NLP & NAME NORMALISATION</div>
-            <h3>The NLP Behind Name Normalisation</h3>
-            <div class="article-date">LinkedIn publication</div>
-            <div class="article-tags"><span>NLP</span><span>Name Normalisation</span><span>Name Screening</span></div>
-            <p>A look at the natural language processing concepts behind name normalisation and its role in preparing name data for screening and matching.</p>
-            <a class="article-link" href="https://lnkd.in/p/dapaG8ci" target="_blank" rel="noopener noreferrer" data-track="linkedin-article-006">Read the complete article on LinkedIn ↗</a>
-            <a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
-          </article>
-        </div>
-        <div class="empty-state" id="emptyState">No articles match that search. Try another keyword or category.</div>
-        <p class="article-note">Publication dates are shown where recorded. These are summaries, not full reproductions; each complete article opens on LinkedIn.</p>
-        <p class="disclaimer">DECiPHERiCS is an independent research and experimentation initiative. Demonstrations and synthetic datasets are educational and do not constitute production AML controls, regulatory advice or validated detection performance.</p>
-      </div>
-    </section>
-
-    <section class="feedback" id="feedback">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">07 / Feedback & collaboration</div>
-          <h2>Help challenge the work.</h2>
-          <p class="lead">DECiPHERiCS is at an early stage. The aim is to build a useful research and experimentation space, not simply publish content. Honest feedback from practitioners, technologists, researchers and learners will help shape what comes next.</p>
-        </div>
-        <div class="feedback-grid">
-          <article><span>01 / THE IDEA</span><h3>Is the purpose clear?</h3><p>Does the site explain what DECiPHERiCS is trying to do and who it is for?</p></article>
-          <article><span>02 / THE EXPERIENCE</span><h3>What should improve?</h3><p>Are the website, articles and interactive lab easy to understand and use?</p></article>
-          <article><span>03 / WHAT’S NEXT</span><h3>What is worth exploring?</h3><p>Which AML, sanctions, payments, data or AI topics deserve a practical experiment?</p></article>
-        </div>
-        <div class="feedback-action feedback-form-wrap">
-          <div class="feedback-form-intro">
-            <strong>Critical feedback is more useful than compliments.</strong>
-            <p>Share what works, what does not, what is missing and what you would build differently. Feedback can be submitted anonymously; name and email are optional.</p>
-          </div>
-          <form id="deciphericsFeedbackForm" class="feedback-form">
-            <div class="feedback-form-grid">
-              <div class="feedback-field">
-                <label for="feedbackCategory">Feedback category <span aria-hidden="true">*</span></label>
-                <select id="feedbackCategory" name="category" required>
-                  <option value="">Select a category</option>
-                  <option>Website clarity and purpose</option>
-                  <option>Website experience and usability</option>
-                  <option>Articles and research content</option>
-                  <option>Screening Intelligence Lab</option>
-                  <option>New topic or experiment idea</option>
-                  <option>Technical correction</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="feedback-field">
-                <label for="feedbackArticle">Related article (optional)</label>
-                <input id="feedbackArticle" name="articleReference" type="text" maxlength="120" placeholder="e.g. AML Decoded #007">
-              </div>
-            </div>
-            <div class="feedback-field">
-              <label for="feedbackMessage">Your feedback <span aria-hidden="true">*</span></label>
-              <textarea id="feedbackMessage" name="message" rows="5" minlength="5" maxlength="2000" required placeholder="What should we retain, change, correct or explore next?"></textarea>
-            </div>
-            <div class="feedback-form-grid">
-              <div class="feedback-field">
-                <label for="feedbackName">Name (optional)</label>
-                <input id="feedbackName" name="name" type="text" maxlength="100" autocomplete="name" placeholder="Your name">
-              </div>
-              <div class="feedback-field">
-                <label for="feedbackEmail">Email (optional)</label>
-                <input id="feedbackEmail" name="email" type="email" maxlength="180" autocomplete="email" placeholder="you@example.com">
-              </div>
-            </div>
-            <div class="feedback-honeypot" aria-hidden="true">
-              <label for="feedbackWebsite">Leave this field empty</label>
-              <input id="feedbackWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
-            </div>
-            <div class="feedback-submit-row">
-              <button class="button primary" type="submit" id="feedbackSubmit">Submit feedback ↗</button>
-              <p class="feedback-privacy">Anonymous by default. Contact details are optional.</p>
-            </div>
-            <p class="feedback-status" id="feedbackStatus" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="wrap">
-        <div class="contact-box">
-          <div>
-            <div class="kicker">08 / Connect</div>
-            <h2>Explore the questions shaping financial-crime technology.</h2>
-          </div>
-          <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
-            <a class="button primary" href="mailto:decipherics@gmail.com?subject=DECiPHERiCS%20Lab%20Enquiry">Start a conversation ↗</a>
-            <a href="mailto:decipherics@gmail.com" style="font-size:14px; color:#315b4d;">decipherics@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <div>© <span id="year"></span> DECiPHERiCS · Financial Crime Intelligence Lab</div>
-      <div>Research · Engineering · Experimentation</div>
-    </div>
-  <div class="footer-attribution">An independent research initiative founded by Sameer Upare.</div>
+<header class="topbar">
+<div class="wrap">
+<nav aria-label="Main navigation">
+<a aria-label="DECiPHERiCS — Financial Crime Intelligence Lab home" class="wordmark" href="#home"><img alt="DECiPHERiCS — Financial Crime Intelligence Lab" src="decipherics_logo.png"/></a>
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<div class="navlinks" id="primary-navigation">
+<a href="#mission">Mission</a>
+<a href="#about">About</a>
+<a href="#capabilities">Research areas</a>
+<a href="#approach">Approach</a>
+<a href="/Algorithm/index.html">Algorithms</a><a href="#decoded">AML Decoded</a>
+<a href="#feedback">Feedback</a>
+<a class="nav-cta" href="#explore-lab">Explore Lab</a>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="wrap">
+<div class="hero-layout">
+<div class="hero-inner">
+<div class="eyebrow"><span class="eyebrow-dot"></span> Independent research · Applied engineering</div>
+<h1>DECiPHERiCS</h1>
+<div class="subbrand">Financial Crime Intelligence Lab</div>
+<p class="hero-copy">Decode the technology behind financial-crime detection. Explore practical research, test algorithms in interactive labs and examine the evidence behind intelligent decisions.</p>
+<div class="hero-actions">
+<a class="button primary" data-track="screening-lab" href="/labs/screening-parse-lab.html">Explore Screening Intelligence Lab <span>↗</span></a>
+<a class="button secondary" href="#decoded">Explore Research</a>
+<a class="button secondary" href="#feedback">Share feedback</a>
+</div>
+<div class="hero-note">Investigate <i></i> Experiment <i></i> Understand</div>
+</div>
+<aside aria-label="Illustrative financial intelligence network visualisation" class="hero-visual">
+<div class="visual-topline"><span>INTELLIGENCE / NETWORK VIEW</span><span class="live-indicator">CONCEPT</span></div>
+<div class="network-stage">
+<svg aria-label="Connected entities and relationship paths" class="network-lines" role="img" viewbox="0 0 520 350">
+<g fill="none" opacity=".55" stroke="#7fc4ad" stroke-width="1.4">
+<path d="M72 174 L178 91 L282 151 L410 74 M178 91 L220 270 L282 151 L430 244 M72 174 L220 270 L105 300 M282 151 L365 320 L430 244 M410 74 L430 244"></path>
+<path d="M178 91 L365 320 M72 174 L430 244" opacity=".55" stroke-dasharray="4 7"></path>
+</g>
+<g fill="#0c5149" stroke="#a5d8c4" stroke-width="2">
+<circle cx="72" cy="174" r="9"></circle><circle cx="178" cy="91" r="13"></circle><circle cx="282" cy="151" r="17"></circle><circle cx="410" cy="74" r="10"></circle><circle cx="430" cy="244" r="13"></circle><circle cx="220" cy="270" r="10"></circle><circle cx="105" cy="300" r="6"></circle><circle cx="365" cy="320" r="7"></circle>
+</g>
+<circle cx="282" cy="151" fill="none" opacity=".8" r="29" stroke="#e0b66e" stroke-width="1.5"></circle>
+<g fill="#d9e9df" font-family="monospace" font-size="10"><text x="48" y="153">ENTITY A</text><text x="155" y="64">ALIAS</text><text x="254" y="119">MATCH</text><text x="384" y="49">ENTITY C</text><text x="404" y="270">ACCOUNT</text><text x="190" y="294">LINK</text></g>
+</svg>
+<div class="visual-signal signal-one"><span>SIMILARITY</span><strong>0.92</strong></div>
+<div class="visual-signal signal-two"><span>RELATIONSHIPS</span><strong>08 LINKS</strong></div>
+</div>
+<div class="visual-footer"><span><b></b> ENTITY RESOLUTION</span><span>DATA · CONTEXT · EVIDENCE</span></div>
+</aside>
+</div>
+</div>
+</section>
+<section class="latest-lab" id="latest">
+<div class="wrap">
+<div class="section-head" style="margin-bottom:26px;">
+<div class="kicker">Latest / Lab updates</div>
+<h2>What’s new in the lab.</h2>
+<p class="lead">New research publications and practical workbenches from DECiPHERiCS.</p>
+</div>
+<div class="latest-grid">
+<article class="latest-item" id="latestResearchCard">
+<div class="latest-label" id="latestResearchLabel">Latest research publication · AML Decoded #008</div>
+<h3 id="latestResearchTitle">Why One Normalised Name Is Not Enough</h3>
+<p id="latestResearchDescription">Why name screening needs multiple representations of an identity — original, normalised, tokenised, transliterated and alias-aware — to improve candidate retrieval and downstream matching.</p>
+<a aria-label="Read AML Decoded #008 on LinkedIn" class="article-link" href="https://lnkd.in/p/dgFJneHd" id="latestResearchLink" rel="noopener noreferrer" target="_blank">Read AML Decoded #008 on LinkedIn ↗</a>
+</article>
+<article class="latest-item">
+<div class="latest-label">Interactive workbench · Available now</div>
+<h3>Screening Intelligence Lab</h3>
+<p>Explore the Screening Intelligence Lab — From Payment Message to Screening Decision. Follow how ISO 20022 payment data is parsed, names are extracted and prepared for screening experiments.</p>
+<a class="article-link" data-track="screening-lab-latest" href="/labs/screening-parse-lab.html">Open Screening Intelligence Lab ↗</a>
+</article>
+<article class="latest-item" id="latestAlgorithmCard">
+<div class="latest-label">Latest algorithm publication · Algorithm Intelligence #001</div>
+<h3>N-gram Matching &amp; Inverted Indexing</h3>
+<p>Explore how character n-grams and inverted indexes support efficient candidate retrieval in name screening, from the underlying mathematics to engineering trade-offs.</p>
+<a class="article-link" data-track="algorithm-intelligence-001" href="/Algorithm/algorithm-001-ngram-matching-inverted-indexing.html">Read Algorithm Intelligence #001 ↗</a>
+<a class="article-link" href="/Algorithm/index.html">Explore the Algorithm Intelligence library ↗</a>
+</article></div>
+</div>
+</section>
+<section class="mission" id="mission">
+<div class="wrap">
+<div class="kicker">01 / Why this lab exists</div>
+<div class="mission-intro">
+<p class="mission-statement">Learn. Experiment. Research. Contribute.</p>
+<div>
+<h2>A shared space for understanding financial-crime technology.</h2>
+<p class="mission-copy">DECiPHERiCS is an independent learning, research and experimentation lab focused on the technology behind financial-crime detection. It is designed to move beyond theoretical discussions and explore how financial-crime systems actually work — from sanctions data engineering and entity resolution to payment screening, machine learning, graph analytics and transaction monitoring.</p>
+<p class="mission-copy">The objective is to create a practical space where practitioners, technology professionals, researchers and learners can build understanding, test ideas, examine limitations and share what they discover.</p>
+</div>
+</div>
+<div class="mission-pillars">
+<article class="mission-pillar"><b>01</b><h3>Learn</h3><p>Understand concepts, architectures, algorithms and the data foundations behind AML systems.</p></article>
+<article class="mission-pillar"><b>02</b><h3>Experiment</h3><p>Build prototypes, test approaches and compare methods using controlled or synthetic datasets.</p></article>
+<article class="mission-pillar"><b>03</b><h3>Research</h3><p>Investigate emerging techniques across AI, NLP, machine learning and graph analytics.</p></article>
+<article class="mission-pillar"><b>04</b><h3>Contribute</h3><p>Share ideas, challenge findings, suggest experiments and help expand the collective knowledge base.</p></article>
+</div>
+<div class="contribute-note"><strong>Built to be challenged:</strong> Suggest a research question, question an assumption, share a use case or point out where an experiment falls short. Critical feedback is part of the research process.</div>
+</div>
+</section>
+<section id="about">
+<div class="wrap intro-grid">
+<div>
+<div class="kicker">02 / The lab</div>
+<p class="statement">Financial crime detection is not one algorithm. It is a connected system of data, decisions, context and evidence.</p>
+</div>
+<div>
+<h2>Make complex systems understandable.</h2>
+<p class="intro-text">DECiPHERiCS is a hands-on research and engineering environment focused on the technology behind AML and financial-crime intelligence. It brings together practical prototypes, controlled experiments and technical learning across sanctions screening, payment intelligence and transaction monitoring.</p>
+<div class="principles">
+<div class="principle"><b>01</b><div><strong>Evidence over assumptions</strong><span>Test techniques against defined datasets and measurable outcomes.</span></div></div>
+<div class="principle"><b>02</b><div><strong>Explainable by design</strong><span>Make matching signals, model outputs and decisions inspectable.</span></div></div>
+<div class="principle"><b>03</b><div><strong>Engineering with context</strong><span>Connect algorithms to real payment, customer and compliance workflows.</span></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="capabilities" id="capabilities">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">03 / Research areas</div>
+<h2>Explore the intelligence stack.</h2>
+<p class="lead">A connected set of research areas, moving from the quality of source data to the interpretation of risk and the evidence behind a decision.</p>
+</div>
+<div class="cards">
+<article class="card"><div class="card-num">01 — ENTITY INTELLIGENCE</div><h3>Sanctions &amp; Entity Resolution</h3><p>Watchlist ingestion, entity profiles, aliases, multilingual names, candidate retrieval and contextual matching.</p><span class="tag">Screening foundations</span><p class="research-detail">In focus: sanctions data ingestion, name normalisation, candidate retrieval, fuzzy matching and explainable entity resolution.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Explore the Screening Intelligence Lab ↗</a><a class="related-reading" href="#article-001">Related reading: AML Decoded #001 and #003 ↗</a><a class="related-reading" href="#latest">Related reading: AML Decoded #008 — Why One Normalised Name Is Not Enough ↗</a><a class="related-reading" href="/Algorithm/algorithm-001-ngram-matching-inverted-indexing.html">Algorithm Intelligence #001: N-gram Matching &amp; Inverted Indexing ↗</a></article>
+<article class="card"><div class="card-num">02 — LANGUAGE &amp; MATCHING</div><h3>NLP &amp; Similarity</h3><p>Normalisation, transliteration, fuzzy matching, embeddings and the trade-offs between recall and precision.</p><span class="tag">Text intelligence</span><p class="research-detail">In focus: transliteration, token handling, string similarity, embeddings and the precision–recall trade-off.</p><a class="related-reading" href="#article-006">Related reading: AML Decoded #006 — The NLP Behind Name Normalisation ↗</a><a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a><a class="related-reading" href="/Algorithm/algorithm-001-ngram-matching-inverted-indexing.html">Algorithm Intelligence #001: N-gram Matching &amp; Inverted Indexing ↗</a></article>
+<article class="card"><div class="card-num">03 — MODEL INTELLIGENCE</div><h3>Machine Learning &amp; Evaluation</h3><p>Feature engineering, model comparison, ranking, calibration, performance measurement and model limitations.</p><span class="tag">Applied ML research</span><p class="research-detail">In focus: feature design, ranking, calibration, validation strategy, threshold selection and model limitations.</p><span class="research-status">Research notes in development</span></article>
+<article class="card"><div class="card-num">04 — PAYMENT INTELLIGENCE</div><h3>Payment &amp; Transaction Screening</h3><p>ISO 20022 message structures, party extraction, payment context, screening workflows and decision controls.</p><span class="tag">Payment systems</span><p class="research-detail">In focus: ISO 20022 structures, party extraction, message context, screening stages and decision traceability.</p><a class="related-reading" href="#article-002">Related reading: AML Decoded #002 ↗</a></article>
+<article class="card"><div class="card-num">05 — BEHAVIOURAL INTELLIGENCE</div><h3>Transaction Monitoring</h3><p>Typologies, synthetic transaction scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="tag">Behaviour &amp; patterns</span><p class="research-detail">In focus: typologies, synthetic scenarios, behavioural baselines, anomaly detection and alert evaluation.</p><span class="research-status">Research notes in development</span></article>
+<article class="card"><div class="card-num">06 — NETWORK INTELLIGENCE</div><h3>Graph Analytics</h3><p>Entity relationships, ownership links, connected accounts, transaction paths and network-based risk signals.</p><span class="tag">Relationships &amp; networks</span><p class="research-detail">In focus: ownership links, connected entities, transaction paths, network features and graph-based risk signals.</p><span class="research-status">Research notes in development</span></article>
+<article class="card"><div class="card-num">07 — INVESTIGATION</div><h3>Explainability &amp; Case Intelligence</h3><p>Evidence traceability, alert context, investigation workflows and human-centred decision support.</p><span class="tag">Decision support</span><p class="research-detail">In focus: evidence traceability, alert context, investigation workflows and human review.</p><span class="research-status">Research notes in development</span></article>
+<article class="card"><div class="card-num">08 — EMERGING METHODS</div><h3>AI &amp; Financial Crime</h3><p>Explore responsible applications of generative AI, assisted analysis and automation with clear human oversight.</p><span class="tag">Emerging research</span><p class="research-detail">In focus: assisted analysis, responsible automation, human oversight and evaluation of generative AI outputs.</p><span class="research-status">Research notes in development</span></article>
+<article class="card"><div class="card-num">09 — DATA FOUNDATION</div><h3>Data Engineering &amp; Governance</h3><p>Source quality, ingestion pipelines, provenance, versioning, reproducibility and controlled experimentation.</p><span class="tag">Trustworthy data</span><p class="research-detail">In focus: source quality, ingestion pipelines, provenance, watchlist versioning and reproducible experiments.</p><a class="related-reading" href="#article-003">Related reading: AML Decoded #003 ↗</a><a class="related-reading" href="#article-005">Related reading: AML Decoded #005 ↗</a></article>
+</div>
+</div>
+</section>
+<section class="method" id="approach">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">04 / Our approach</div>
+<h2>From question to evidence.</h2>
+<p class="lead">The lab follows an experiment-led approach: understand the problem, build a testable method, measure the outcome and document what the evidence does—and does not—show.</p>
+</div>
+<div class="steps">
+<div class="step"><small>STEP 01</small><h3>Frame the problem</h3><p>Define the financial-crime use case, data assumptions and decision objective.</p></div>
+<div class="step"><small>STEP 02</small><h3>Build the experiment</h3><p>Create a prototype, dataset or workflow that makes the hypothesis testable.</p></div>
+<div class="step"><small>STEP 03</small><h3>Measure &amp; challenge</h3><p>Evaluate performance, edge cases, operational trade-offs and failure modes.</p></div>
+<div class="step"><small>STEP 04</small><h3>Explain the findings</h3><p>Publish the method, results, limitations and lessons for further investigation.</p></div>
+</div>
+</div>
+</section>
+<section class="explore-lab" id="algorithm-intelligence">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">Algorithm Intelligence</div>
+<h2>Understand the methods behind intelligent decisions.</h2>
+<p class="lead">A structured collection of algorithm explainers, mathematical foundations and applied experiments for financial-crime technology. Each algorithm entry connects the underlying theory to practical use cases and, where available, an interactive lab.</p>
+</div>
+<div class="cards">
+<article class="lab-card">
+<div class="card-num">ALGORITHM INTELLIGENCE · INDEX</div>
+<h3>Explore the algorithm library</h3>
+<p>Explore algorithms used in name screening, candidate retrieval, entity resolution, machine learning and financial-crime analytics. Start with the first publication: N-gram Matching &amp; Inverted Indexing.</p>
+<a class="related-reading" href="/Algorithm/index.html">Explore Algorithm Intelligence ↗</a>
+</article>
+<article class="lab-card">
+<div class="card-num">ALGORITHM 001 · AVAILABLE</div>
+<h3>N-gram Matching &amp; Inverted Indexing</h3>
+<p>Understand character n-grams, inverted indexes and candidate retrieval — including the mathematics, engineering trade-offs and applications in name screening.</p>
+<a class="related-reading" href="/Algorithm/algorithm-001-ngram-matching-inverted-indexing.html">Read Algorithm Intelligence #001 ↗</a>
+</article>
+</div>
+</div>
+</section><section class="explore-lab" id="explore-lab">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">05 / Explore Lab</div>
+<h2>From research to working experiments.</h2>
+<p class="lead">Explore practical workbenches that turn financial-crime research into testable experiments. The Screening Intelligence Lab is available now; additional workbenches will be added as they are developed.</p>
+</div>
+<div class="cards">
+<article class="lab-card"><div class="card-num">WORKBENCH 01 · AVAILABLE NOW</div><h3>Screening Intelligence Lab</h3><p>From Payment Message to Screening Decision. Explore ISO 20022 payment parsing, name extraction, normalisation, candidate retrieval, similarity methods and explainable screening outcomes.</p><a class="related-reading" href="/labs/screening-parse-lab.html">Open Screening Intelligence Lab ↗</a></article>
+<article class="lab-card"><div class="card-num">WORKBENCH 02 · IN DEVELOPMENT</div><h3>Payment Intelligence Lab</h3><p>Inspect payment-message structures, party extraction, screening stages and decision traceability across payment flows.</p><span class="tag">Planned workbench</span></article>
+<article class="lab-card"><div class="card-num">WORKBENCH 03 · IN DEVELOPMENT</div><h3>Graph &amp; Behaviour Lab</h3><p>Experiment with entity relationships, transaction networks, behavioural patterns and investigation signals.</p><span class="tag">Planned workbench</span></article>
+</div>
+</div>
+</section>
+<section class="series" id="decoded">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">06 / Knowledge &amp; field notes</div>
+<h2>Complexity, decoded.</h2>
+<p class="lead">AML Decoded is the technical publication stream connected to the lab. Search the growing archive by article number, topic or keyword, and follow each link to the complete publication on LinkedIn.</p>
+</div>
+<div class="series-panel">
+<div>
+<div class="kicker">Order in Chaos · Financial Systems Decoded</div>
+<h3>AML Decoded</h3>
+<p>Short summaries and key ideas live here on DECiPHERiCS. Each publication links to its complete article on LinkedIn, keeping the full discussion and engagement in one place.</p>
+</div>
+<div class="series-mark">ARTICLE SUMMARIES<br/>LINKEDIN PUBLICATIONS<br/>RESEARCH NOTES</div>
+</div>
+<div aria-label="Search AML Decoded archive" class="archive-tools" role="search">
+<input aria-label="Search articles" id="articleSearch" placeholder="Search by article number, title or keyword…" type="search"/>
+<select aria-label="Filter by category" id="articleCategory">
+<option value="all">All categories</option>
+<option value="name-screening">Name screening</option>
+<option value="payment-screening">Payment screening</option>
+<option value="knowledge-base">Knowledge base &amp; data governance</option>
+<option value="data-engineering">Data engineering</option>
+<option value="nlp-normalisation">NLP &amp; name normalisation</option>
+<option value="financial-systems">Financial systems</option>
+<option value="safe-decoded">SAFe Decoded</option>
+<option value="other">Other</option>
+</select>
+</div>
+<p aria-live="polite" class="archive-count" id="archiveCount">Showing 8 of 8 entries</p>
+<div aria-label="AML Decoded article summaries" class="article-grid" id="articleGrid">
+<article class="article-card" data-article-number="#008" data-category="nlp-normalisation" data-search="008 why one normalised name is not enough name normalisation normalization aliases transliteration tokenisation tokenization entity resolution name screening NLP" id="article-008">
+<div class="article-meta">AML DECODED #008 · NLP &amp; NAME REPRESENTATION</div>
+<h3>Why One Normalised Name Is Not Enough</h3>
+<div class="article-date"><time datetime="2026-11-21">Published 21 Nov 2026</time> · 5 min read</div>
+<div class="article-tags"><span>NLP</span><span>Name Normalisation</span><span>Entity Resolution</span></div>
+<p>Why name screening needs multiple representations of an identity — original, normalised, tokenised, transliterated and alias-aware — to improve candidate retrieval and downstream matching.</p>
+<a class="article-link" data-track="linkedin-article-008" href="https://lnkd.in/p/dgFJneHd" rel="noopener noreferrer" target="_blank">Read AML Decoded #008 on LinkedIn ↗</a>
+<a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
+</article>
+<article class="article-card" data-article-number="#007" data-category="name-screening" data-search="007 candidate retrieval right watchlist records sanctions name screening entity resolution NLP" id="article-007">
+<div class="article-meta">AML DECODED #007 · CANDIDATE RETRIEVAL</div>
+<h3>Candidate Retrieval: Finding the Right Watchlist Records</h3>
+<div class="article-date">Published 20 Nov 2026</div>
+<div class="article-tags"><span>Sanctions</span><span>Candidate Retrieval</span><span>NLP</span></div>
+<p>How a screening system narrows a large watchlist into a relevant candidate set, balancing retrieval coverage, efficiency and downstream matching quality.</p>
+<a class="article-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7529506400721575936/" rel="noopener noreferrer" target="_blank">Read the complete article on LinkedIn ↗</a>
+<a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
+</article>
+<article class="article-card" data-category="name-screening" data-search="001 sanctions name screening comparing two strings transliteration aliases entity resolution" id="article-001">
+<div class="article-meta">AML DECODED #001 · NAME SCREENING</div>
+<h3>Why Is Sanctions Name Screening Harder Than Comparing Two Strings?</h3>
+<div class="article-date"><time datetime="2026-11-05">Published 05 Nov 2026</time> · 6 min read</div>
+<div class="article-tags"><span>Sanctions</span><span>NLP</span><span>Entity Resolution</span></div>
+<p>Names can vary through transliteration, diacritics, aliases, abbreviations and inconsistent data. This article explains why string similarity is not identity similarity, and why candidate retrieval, contextual attributes and governed decisions all matter.</p>
+<a class="article-link" data-track="linkedin-article-001" href="https://lnkd.in/p/d2J8Ut3V" rel="noopener noreferrer" target="_blank">Read the complete article on LinkedIn ↗</a>
+<a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
+</article>
+<article class="article-card" data-category="payment-screening" data-search="002 payment message screening decision iso 20022 payment intelligence" id="article-002">
+<div class="article-meta">AML DECODED #002 · PAYMENT SCREENING</div>
+<h3>From Payment Message to Screening Decision</h3>
+<div class="article-date"><time datetime="2026-11-10">Published 10 Nov 2026</time> · 5 min read</div>
+<div class="article-tags"><span>ISO 20022</span><span>Payment Screening</span></div>
+<p>Explore the journey from an incoming payment message to a screening outcome, and the stages that connect payment data, party information, screening logic and a reviewable decision.</p>
+<a class="article-link" href="https://lnkd.in/p/dkepNrAG" rel="noopener noreferrer" target="_blank">Read the complete article on LinkedIn ↗</a>
+</article>
+<article class="article-card" data-category="knowledge-base" data-search="003 sanctions knowledge base entities aliases watchlist data engineering" id="article-003">
+<div class="article-meta">AML DECODED #003 · KNOWLEDGE BASE</div>
+<h3>What Is a Sanctions Knowledge Base?</h3>
+<div class="article-date"><time datetime="2026-11-11">Published 11 Nov 2026</time> · 5 min read</div>
+<div class="article-tags"><span>Sanctions</span><span>Data Engineering</span></div>
+<p>An introduction to the structured information that supports sanctions screening: entities, names, aliases and the data foundation used to identify and assess potential matches.</p>
+<a class="article-link" data-track="linkedin-article-003" href="https://lnkd.in/p/dyY3C_7u" rel="noopener noreferrer" target="_blank">Read the complete article on LinkedIn ↗</a>
+<a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
+</article>
+<article class="article-card" data-category="data-engineering" data-search="004 building sanctions data pipeline ingestion validation transformation provenance data engineering" id="article-004">
+<div class="article-meta">AML DECODED #004 · DATA ENGINEERING</div>
+<h3>Building a Sanctions Data Pipeline</h3>
+<p>Explore the stages involved in building a sanctions data pipeline, from source ingestion and data validation to transformation and preparation for downstream screening.</p>
+<div class="article-tags"><span>Data Engineering</span><span>Sanctions</span><span>Data Quality</span></div>
+<a class="article-link" data-track="linkedin-article-004" href="https://lnkd.in/p/diNzSBWd" rel="noopener noreferrer" target="_blank">Read AML Decoded #004 on LinkedIn ↗</a>
+<a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
+</article>
+<article class="article-card" data-category="knowledge-base" data-search="005 watchlist data version control sanctions data governance versioning change history reproducibility" id="article-005">
+<div class="article-meta">AML DECODED #005 · WATCHLIST DATA &amp; GOVERNANCE</div>
+<h3>Why Watchlist Data Needs Version Control</h3>
+<div class="article-date"><time datetime="2026-11-12">Published 12 Nov 2026</time> · 5 min read</div>
+<div class="article-tags"><span>Sanctions</span><span>Data Governance</span></div>
+<p>Why changes to watchlist data need to be tracked and controlled, with version history supporting traceability and reproducibility in sanctions screening.</p>
+<a class="article-link" data-track="linkedin-article-005" href="https://lnkd.in/p/dG4sfU3s" rel="noopener noreferrer" target="_blank">Read the complete article on LinkedIn ↗</a>
+<a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
+</article>
+<article class="article-card" data-category="nlp-normalisation" data-search="006 nlp natural language processing name normalisation name normalization text processing screening" id="article-006">
+<div class="article-meta">AML DECODED #006 · NLP &amp; NAME NORMALISATION</div>
+<h3>The NLP Behind Name Normalisation</h3>
+<div class="article-date">LinkedIn publication</div>
+<div class="article-tags"><span>NLP</span><span>Name Normalisation</span><span>Name Screening</span></div>
+<p>A look at the natural language processing concepts behind name normalisation and its role in preparing name data for screening and matching.</p>
+<a class="article-link" data-track="linkedin-article-006" href="https://lnkd.in/p/dapaG8ci" rel="noopener noreferrer" target="_blank">Read the complete article on LinkedIn ↗</a>
+<a class="related-reading" href="/labs/screening-parse-lab.html">Related experiment: Screening Intelligence Lab ↗</a>
+</article>
+</div>
+<div class="empty-state" id="emptyState">No articles match that search. Try another keyword or category.</div>
+<p class="article-note">Publication dates are shown where recorded. These are summaries, not full reproductions; each complete article opens on LinkedIn.</p>
+<p class="disclaimer">DECiPHERiCS is an independent research and experimentation initiative. Demonstrations and synthetic datasets are educational and do not constitute production AML controls, regulatory advice or validated detection performance.</p>
+</div>
+</section>
+<section class="feedback" id="feedback">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">07 / Feedback &amp; collaboration</div>
+<h2>Help challenge the work.</h2>
+<p class="lead">DECiPHERiCS is at an early stage. The aim is to build a useful research and experimentation space, not simply publish content. Honest feedback from practitioners, technologists, researchers and learners will help shape what comes next.</p>
+</div>
+<div class="feedback-grid">
+<article><span>01 / THE IDEA</span><h3>Is the purpose clear?</h3><p>Does the site explain what DECiPHERiCS is trying to do and who it is for?</p></article>
+<article><span>02 / THE EXPERIENCE</span><h3>What should improve?</h3><p>Are the website, articles and interactive lab easy to understand and use?</p></article>
+<article><span>03 / WHAT’S NEXT</span><h3>What is worth exploring?</h3><p>Which AML, sanctions, payments, data or AI topics deserve a practical experiment?</p></article>
+</div>
+<div class="feedback-action feedback-form-wrap">
+<div class="feedback-form-intro">
+<strong>Critical feedback is more useful than compliments.</strong>
+<p>Share what works, what does not, what is missing and what you would build differently. Feedback can be submitted anonymously; name and email are optional.</p>
+</div>
+<form class="feedback-form" id="deciphericsFeedbackForm">
+<div class="feedback-form-grid">
+<div class="feedback-field">
+<label for="feedbackCategory">Feedback category <span aria-hidden="true">*</span></label>
+<select id="feedbackCategory" name="category" required="">
+<option value="">Select a category</option>
+<option>Website clarity and purpose</option>
+<option>Website experience and usability</option>
+<option>Articles and research content</option>
+<option>Screening Intelligence Lab</option>
+<option>New topic or experiment idea</option>
+<option>Technical correction</option>
+<option>Other</option>
+</select>
+</div>
+<div class="feedback-field">
+<label for="feedbackArticle">Related article (optional)</label>
+<input id="feedbackArticle" maxlength="120" name="articleReference" placeholder="e.g. AML Decoded #007" type="text"/>
+</div>
+</div>
+<div class="feedback-field">
+<label for="feedbackMessage">Your feedback <span aria-hidden="true">*</span></label>
+<textarea id="feedbackMessage" maxlength="2000" minlength="5" name="message" placeholder="What should we retain, change, correct or explore next?" required="" rows="5"></textarea>
+</div>
+<div class="feedback-form-grid">
+<div class="feedback-field">
+<label for="feedbackName">Name (optional)</label>
+<input autocomplete="name" id="feedbackName" maxlength="100" name="name" placeholder="Your name" type="text"/>
+</div>
+<div class="feedback-field">
+<label for="feedbackEmail">Email (optional)</label>
+<input autocomplete="email" id="feedbackEmail" maxlength="180" name="email" placeholder="you@example.com" type="email"/>
+</div>
+</div>
+<div aria-hidden="true" class="feedback-honeypot">
+<label for="feedbackWebsite">Leave this field empty</label>
+<input autocomplete="off" id="feedbackWebsite" name="website" tabindex="-1" type="text"/>
+</div>
+<div class="feedback-submit-row">
+<button class="button primary" id="feedbackSubmit" type="submit">Submit feedback ↗</button>
+<p class="feedback-privacy">Anonymous by default. Contact details are optional.</p>
+</div>
+<p aria-live="polite" class="feedback-status" id="feedbackStatus" role="status"></p>
+</form>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="wrap">
+<div class="contact-box">
+<div>
+<div class="kicker">08 / Connect</div>
+<h2>Explore the questions shaping financial-crime technology.</h2>
+</div>
+<div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
+<a class="button primary" href="mailto:decipherics@gmail.com?subject=DECiPHERiCS%20Lab%20Enquiry">Start a conversation ↗</a>
+<a href="mailto:decipherics@gmail.com" style="font-size:14px; color:#315b4d;">decipherics@gmail.com</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap footer-inner">
+<div>© <span id="year"></span> DECiPHERiCS · Financial Crime Intelligence Lab</div>
+<div>Research · Engineering · Experimentation</div>
+</div>
+<div class="footer-attribution">An independent research initiative founded by Sameer Upare.</div>
 </footer>
 <script>
 (() => {
@@ -1111,7 +1119,6 @@ footer{border-top:1px solid var(--line)}
   }
 })();
 </script>
-
 <!-- Google Analytics 4: replace the placeholder with your GA4 Measurement ID (G-XXXXXXXXXX). -->
 <script>
 (function () {
@@ -1198,6 +1205,5 @@ footer{border-top:1px solid var(--line)}
   }
 })();
 </script>
-
 </body>
 </html>
