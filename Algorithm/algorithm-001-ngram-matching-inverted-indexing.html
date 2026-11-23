@@ -191,7 +191,7 @@ pre,.formula { background:#092e2a; border-color:#315b4d; color:#e8efe4; }
 <p class="caption">Each window overlaps the previous window by N − 1 characters.</p>
 </div>
 <p>For a string of length <i>L</i>, the number of character N-grams is:</p>
-<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Experiment with N-gram generation in the lab ↗</a>
+<a class="practice-link" href="/labs/screening-parse-lab.html#learn/ngl">Experiment with N-gram generation in the lab ↗</a>
 <div class="formula">Number of N-grams = max(0, L − N + 1)<small>L is the number of characters after the chosen normalisation policy; N is the gram size.</small></div>
 <p>For SAMEER, L = 6. It produces five bigrams, four trigrams and three four-grams.</p>
 </section>
@@ -227,7 +227,7 @@ S003 → SAMEERA → SAM, AME, MEE, EER, ERA</pre>
 <tr><td><code>SAM</code></td><td>S001, S002, S003</td></tr><tr><td><code>AME</code></td><td>S001, S003</td></tr><tr><td><code>MEE</code></td><td>S001, S003</td></tr><tr><td><code>EER</code></td><td>S001, S003</td></tr><tr><td><code>AMI</code></td><td>S002</td></tr><tr><td><code>MIR</code></td><td>S002</td></tr><tr><td><code>ERA</code></td><td>S003</td></tr>
 </tbody></table>
 <div class="callout green"><b>Why “inverted”?</b> The lookup direction is reversed. Instead of asking “which N-grams belong to this record?”, the search asks “which records contain this N-gram?”</div>
-<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Build and inspect an inverted index ↗</a>
+<a class="practice-link" href="/labs/screening-parse-lab.html#learn/ngl">Build and inspect an inverted index ↗</a>
 <h3>What is stored in a posting list?</h3>
 <p>A basic posting list stores record IDs. A production index may also store term frequency, field name, token position, offsets, document frequency or other metadata needed for ranking and filtering. The right structure depends on the retrieval design.</p>
 </section>
@@ -254,7 +254,7 @@ S003 → SAMEERA → SAM, AME, MEE, EER, ERA</pre>
 <tr><td>S003 · SAMEERA</td><td>SAM, AME, MEE, EER</td><td>4</td></tr>
 </tbody></table>
 <p>S001 and S003 tie on this simple overlap count. A later comparison stage can distinguish them using full-string similarity, token information and identity attributes.</p>
-<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Change the query and observe candidate retrieval ↗</a>
+<a class="practice-link" href="/labs/screening-parse-lab.html#learn/ngl">Change the query and observe candidate retrieval ↗</a>
 <div class="callout amber"><b>Retrieval is a filter, not a verdict.</b> A record that shares several N-grams is a candidate for further examination. It is not automatically a match. Conversely, a record with no shared grams may be missed by this retrieval channel, which is why multiple retrieval strategies and recall testing matter.</div>
 </section>
 <section id="math">
@@ -284,7 +284,7 @@ Jaccard = 1 / 6 = 0.1667</pre>
 <div class="formula">IDF(g) = log(1 + (N / (1 + DF(g))))</div>
 <p>For example, if a trigram appears in 50,000 of 1,000,000 indexed records, it is less discriminative than a trigram appearing in only 20 records. IDF can help reduce the influence of very common patterns.</p>
 <div class="callout"><b>Keep the concepts separate:</b> N-gram generation creates the features. An inverted index makes those features searchable. Jaccard, Dice and Cosine compare representations. IDF weights features according to how widely they occur in the corpus.</div>
-<a class="practice-link" href="/labs/ngram-inverted-index-lab.html">Experiment with overlap and similarity scores ↗</a>
+<a class="practice-link" href="/labs/screening-parse-lab.html#learn/ngl">Experiment with overlap and similarity scores ↗</a>
 </section>
 <section id="examples">
 <div class="kicker">07 · Examples</div><h2>Simple, medium and complex cases</h2>
@@ -402,7 +402,7 @@ Jaccard = 1 / 6 = 0.1667</pre>
 <span>Explore in practice</span>
 </div>
 </div>
-<a class="practice-action" href="/labs/ngram-inverted-index-lab.html">Explore N-gram &amp; Inverted Index Lab ↗</a>
+<a class="practice-action" href="/labs/screening-parse-lab.html#learn/ngl">Explore N-gram &amp; Inverted Index Lab ↗</a>
 </div>
 </section>
 <div class="footer">
